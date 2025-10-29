@@ -41,7 +41,7 @@ apple_touch_icon = "/blog/images/logo.svg"
 safari_pinned_tab = "/blog/images/logo.svg"
 
 [params.label]
-text = "Powered by Taubyte"
+text = "Taubyte"
 
 # profile-mode
 [params.profileMode]
