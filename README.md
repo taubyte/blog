@@ -9,7 +9,23 @@ Simple Hugo blog using PaperMod theme, deployed to GitHub Pages.
 
 ## First Time Setup (New PC)
 
-### Quick Setup (Recommended)
+### Double-Click Setup (Easiest!)
+
+**Windows Users:**
+- Double-click `setup.bat` to install Hugo
+- Double-click `server.bat` to start the server
+- Double-click `new-post.bat` to create a new post
+
+**macOS Users:**
+- Double-click `setup.command` to install Hugo
+- Double-click `server.command` to start the server
+- Double-click `new-post.command` to create a new post
+
+**Linux Users:**
+- Right-click scripts → Properties → Permissions → Check "Execute"
+- Or use terminal commands below
+
+### Quick Setup (Terminal/Command Line)
 
 ```bash
 # 1. Clone the repository
@@ -28,6 +44,7 @@ make server
 ```
 
 That's it! The setup script will:
+
 - Detect your operating system
 - Download and install Hugo Extended automatically
 - Verify the installation
@@ -196,7 +213,13 @@ GitHub Actions will automatically build and deploy to: https://taubyte.github.io
 
 ## Commands Reference
 
-**Using Make (Recommended):**
+**Double-Click Solutions:**
+- Windows: `setup.bat`, `server.bat`, `new-post.bat`
+- macOS: `setup.command`, `server.command`, `new-post.command`
+- Linux: Make scripts executable, then double-click
+
+**Using Make (Recommended for Terminal):**
+
 - `make help` - Show all available commands
 - `make setup` - Install Hugo automatically
 - `make server` - Start development server
@@ -206,11 +229,13 @@ GitHub Actions will automatically build and deploy to: https://taubyte.github.io
 - `make publish` - Build and stage for git
 
 **Using Scripts:**
+
 - `./scripts/setup.sh` - Install Hugo
 - `./scripts/server.sh` - Start server
 - `./scripts/new-post.sh <name>` - Create post
 
 **Direct Hugo Commands:**
+
 - `hugo server` (if Hugo is in PATH)
 - `../bin/hugo server` (if using local binary)
 
