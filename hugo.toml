@@ -12,8 +12,8 @@ keywords = ["Taubyte", "Blog", "Distributed Computing", "Edge Technology", "Clou
 author = "Taubyte"
 images = ["/blog/images/logo.svg"]
 DateFormat = "January 2, 2006"
-defaultTheme = "auto" # dark, light
-disableThemeToggle = false
+defaultTheme = "light" # dark, light
+disableThemeToggle = true
 
 ShowReadingTime = true
 ShowShareButtons = false
