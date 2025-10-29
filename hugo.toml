@@ -101,9 +101,9 @@ hiddenInList = true # hide on list pages and home
 hiddenInSingle = true # hide on single page
 
 [params.editPost]
-URL = "https://github.com/taubyte/blog/issues/new?title=[post-suggestion]&body=Please%20describe%20the%20changes%20you%20suggest%20for%20this%20blog%20post.%0A%0APost:%20"
+URL = "https://github.com/taubyte/blog/issues/new?title=[post-suggestion]%20{{.Title}}&body=Please%20describe%20the%20changes%20you%20suggest%20for%20this%20blog%20post."
 Text = "Suggest Changes" # edit text
-appendFilePath = true # append file path to help identify the post
+appendFilePath = false # don't append file path
 
 # for search
 # https://fusejs.io/api/options.html
