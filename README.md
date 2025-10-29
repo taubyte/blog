@@ -55,13 +55,17 @@ Visit: http://localhost:1313/blog/
 
 ## Publishing
 
+Push to main branch:
+
 ```bash
 git add .
 git commit -m "Your message"
 git push origin main
 ```
 
-GitHub Actions builds and deploys to: https://taubyte.github.io/blog/
+Automatically builds and deploys to: https://taubyte.github.io/blog/
+
+**Note:** Only repository collaborators can push. To add protection, set up branch protection rules in GitHub Settings.
 
 ## File Structure
 
