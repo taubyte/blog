@@ -18,6 +18,5 @@ git push origin main
 ```
 
 Wait ~2 minutes. Live at: https://taubyte.github.io/blog/
+
 # Test change
-# Another test
-# Test protection
