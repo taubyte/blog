@@ -47,7 +47,7 @@ iconHeight = 35
 
 # profile-mode
 [params.profileMode]
-enabled = false # needs to be explicitly set
+enabled = true # needs to be explicitly set
 title = "Taubyte"
 subtitle = "Distributed Computing & Edge Technology"
 imageUrl = "<title or url>"
@@ -62,6 +62,26 @@ url = "/posts"
 [[params.profileMode.buttons]]
 name = "Tags"
 url = "/tags"
+
+[[params.profileMode.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/dtaubyte"
+
+[[params.profileMode.socialIcons]]
+name = "instagram"
+url = "https://instagram.com/dtaubyte"
+
+[[params.profileMode.socialIcons]]
+name = "github"
+url = "https://github.com/taubyte"
+
+[[params.profileMode.socialIcons]]
+name = "discord"
+url = "https://discord.gg/4agEDXuf"
+
+[[params.profileMode.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/company/taubyte-page"
 
 # home-info mode
 [params.homeInfoParams]
