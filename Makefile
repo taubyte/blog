@@ -8,10 +8,10 @@ help: ## Show this help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 setup: ## Install Hugo automatically
-	@./scripts/setup.sh
+	@./setup.sh
 
 server: ## Start development server
-	@./scripts/server.sh
+	@./server.sh
 
 build: ## Build site for production
 	@echo "🏗️  Building site..."
@@ -23,7 +23,7 @@ new: ## Create new post (usage: make new POST=post-name)
 		echo "❌ Please specify POST name: make new POST=my-post-name"; \
 		exit 1; \
 	fi
-	@./scripts/new-post.sh $(POST)
+	@./new-post.sh $(POST)
 
 clean: ## Clean generated files
 	@echo "🧹 Cleaning..."
