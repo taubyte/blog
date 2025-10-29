@@ -222,7 +222,7 @@ GitHub Actions will automatically build and deploy to: https://taubyte.github.io
 
 - Windows: `scripts/windows/setup.bat`, `scripts/windows/server.bat`, `scripts/windows/new-post.bat`
 - macOS: `scripts/macos/setup.command`, `scripts/macos/server.command`, `scripts/macos/new-post.command`
-- Linux: `scripts/linux/setup.sh`, `scripts/linux/server.sh`, `scripts/linux/new-post.sh`
+- Linux: `scripts/linux/setup.desktop`, `scripts/linux/server.desktop`, `scripts/linux/new-post.desktop` (use `.desktop` files for true double-click)
 
 **Using Make (Recommended for Terminal):**
 
