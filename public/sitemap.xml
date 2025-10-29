@@ -2,49 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/blog/categories/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/development/</loc>
+    <loc>http://localhost:1313/blog/categories/development/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
+    <loc>http://localhost:1313/blog/tags/hugo/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/hugo-tips-and-tricks/</loc>
+    <loc>http://localhost:1313/blog/posts/hugo-tips-and-tricks/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/blog/posts/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/static-site/</loc>
+    <loc>http://localhost:1313/blog/tags/static-site/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://localhost:1313/blog/tags/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tips/</loc>
+    <loc>http://localhost:1313/blog/tags/tips/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/tutorial/</loc>
+    <loc>http://localhost:1313/blog/categories/tutorial/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/web-development/</loc>
+    <loc>http://localhost:1313/blog/tags/web-development/</loc>
     <lastmod>2025-10-29T01:56:33+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/blog/</loc>
+    <loc>http://localhost:1313/blog/tags/blog/</loc>
     <lastmod>2025-10-29T01:56:12+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/first-post/</loc>
+    <loc>http://localhost:1313/blog/tags/first-post/</loc>
     <lastmod>2025-10-29T01:56:12+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/general/</loc>
+    <loc>http://localhost:1313/blog/categories/general/</loc>
     <lastmod>2025-10-29T01:56:12+01:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/my-first-post/</loc>
+    <loc>http://localhost:1313/blog/posts/my-first-post/</loc>
     <lastmod>2025-10-29T01:56:12+01:00</lastmod>
   </url>
 </urlset>

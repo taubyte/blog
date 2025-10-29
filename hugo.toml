@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://taubyte.github.io/blog/'
 languageCode = 'en-us'
 title = 'Taubyte Blog'
 theme = 'PaperMod'

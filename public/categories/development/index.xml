@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Development on Taubyte Blog</title>
-    <link>http://localhost:1313/categories/development/</link>
+    <link>http://localhost:1313/blog/categories/development/</link>
     <description>Recent content in Development on Taubyte Blog</description>
     <image>
       <title>Taubyte Blog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>http://localhost:1313/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 29 Oct 2025 01:56:33 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Tips and Tricks</title>
-      <link>http://localhost:1313/posts/hugo-tips-and-tricks/</link>
+      <link>http://localhost:1313/blog/posts/hugo-tips-and-tricks/</link>
       <pubDate>Wed, 29 Oct 2025 01:56:33 +0100</pubDate>
-      <guid>http://localhost:1313/posts/hugo-tips-and-tricks/</guid>
+      <guid>http://localhost:1313/blog/posts/hugo-tips-and-tricks/</guid>
       <description>Useful tips and tricks for working with Hugo static site generator</description>
     </item>
   </channel>
