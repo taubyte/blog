@@ -1,82 +1,41 @@
 # Taubyte Blog
 
-Hugo blog with PaperMod theme, deployed to GitHub Pages.
+Hugo blog deployed to GitHub Pages.
 
-## Setup
-
-1. Clone the repository
+## Quick Start
 
 ```bash
 git clone https://github.com/taubyte/blog.git
 cd blog
-```
-
-2. Install Hugo
-
-```bash
 make setup
-```
-
-3. Start the server
-
-```bash
 make server
 ```
 
-Visit: http://localhost:1313/blog/
+## Create Post
 
-## Commands
+1. Create file: `content/posts/my-post.md`
+2. Copy template from `content/posts/_template.md`
+3. Set `draft = false`
+4. Write your content
 
-- `make setup` - Install Hugo
-- `make server` - Start development server
-- `make new POST=name` - Create new post
-- `make build` - Build site
-- `make clean` - Clean build files
-
-## Double-click (GUI)
-
-**Windows:**
-
-- `scripts/windows/setup.bat`
-- `scripts/windows/server.bat`
-- `scripts/windows/new-post.bat`
-
-**macOS:**
-
-- `scripts/macos/setup.command`
-- `scripts/macos/server.command`
-- `scripts/macos/new-post.command`
-
-**Linux:**
-
-- `scripts/linux/setup.sh`
-- `scripts/linux/server.sh`
-- `scripts/linux/new-post.sh`
-
-## Publishing
-
-Push to main branch:
+## Publish
 
 ```bash
 git add .
-git commit -m "Your message"
+git commit -m "Add new post"
 git push origin main
 ```
 
-Automatically builds and deploys to: https://taubyte.github.io/blog/
+Wait ~2 minutes. Live at: https://taubyte.github.io/blog/
 
-**Note:** Only repository collaborators can push. To add protection, set up branch protection rules in GitHub Settings.
+## Commands
 
-## File Structure
+- `make server` - Start dev server
+- `make new POST=name` - Create post
+- `make build` - Build site
 
-- `content/posts/` - Blog posts (Markdown)
-- `hugo.toml` - Site configuration
-- `themes/PaperMod/` - Theme files
-- `scripts/` - OS-specific scripts
+## Double-Click
 
-## Notes
-
-- Hugo binary is in `../bin/hugo`
-- Run commands from the `blog/` directory
-- Set `draft = false` in posts to publish
-- GitHub Actions handles deployment automatically
+- Windows: `scripts/windows/setup.bat`, `server.bat`, `new-post.bat`
+- macOS: `scripts/macos/setup.command`, `server.command`, `new-post.command`
+- Linux: `scripts/linux/setup.sh`, `server.sh`, `new-post.sh`
