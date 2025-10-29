@@ -70,11 +70,11 @@ Content = "Stay updated with the latest news, tutorials, and insights from the T
 
 [[params.socialIcons]]
 name = "twitter"
-url = "https://twitter.com/taubyte"
+url = "https://twitter.com/dtaubyte"
 
 [[params.socialIcons]]
 name = "instagram"
-url = "https://instagram.com/taubyte"
+url = "https://instagram.com/dtaubyte"
 
 [[params.socialIcons]]
 name = "github"
