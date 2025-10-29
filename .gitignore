@@ -1,6 +1,46 @@
-# Hugo build output
+# Hugo build output (should not be committed)
 /public/
 /resources/_gen/
 
 # Hugo binary (local installation)
 ../bin/
+/bin/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-*
+
+# Log files
+*.log
+
+# Temporary files
+.tmp/
+.cache/
+
+# Node modules (if using npm for additional tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Environment files
+.env
+.env.local
+
+# Hugo cache and resources
+.hugo_build.lock
