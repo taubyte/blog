@@ -7,8 +7,6 @@ Hugo blog deployed to GitHub Pages.
 ```bash
 git clone https://github.com/taubyte/blog.git
 cd blog
-make setup
-make server
 ```
 
 ## Create Post
@@ -27,12 +25,6 @@ git push origin main
 ```
 
 Wait ~2 minutes. Live at: https://taubyte.github.io/blog/
-
-## Commands
-
-- `make server` - Start dev server
-- `make new POST=name` - Create post
-- `make build` - Build site
 
 ## Double-Click
 
