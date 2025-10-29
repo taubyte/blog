@@ -8,7 +8,7 @@ tags:
   - computing
   - distributed
 image:
-  src: /images/dist-vs-cloud-computing-opt.png
+  src: images/dist-vs-cloud-computing-opt.png
   alt: The Growth and Evolution of the Cloud Computing Market
 summary:
   The digital transformation of businesses has significantly increased reliance on advanced computing paradigms, primarily cloud computing and distributed computing. Cloud computing offers scalable, on-demand access to computing resources over the internet, managed centrally by providers like AWS and Google Cloud. In contrast, distributed computing involves a network of interconnected computers working collaboratively to solve complex problems, enhancing fault tolerance and processing speed. While cloud computing excels in flexibility and cost-efficiency with a pay-as-you-go model, distributed computing provides superior performance for parallel processing tasks. The integration of AI into cloud platforms further enhances capabilities, driving innovation and efficiency in various applications.
