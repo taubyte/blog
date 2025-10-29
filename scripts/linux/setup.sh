@@ -106,9 +106,7 @@ main() {
     if check_hugo; then
         echo ""
         echo "✅ Setup complete! You can start the server with:"
-        echo "   make server"
-        echo "   or"
-        echo "   ./scripts/server.sh"
+        echo "   ./scripts/linux/server.sh"
         exit 0
     fi
     
@@ -117,9 +115,7 @@ main() {
     if install_hugo_local; then
         echo ""
         echo "✅ Setup complete! You can start the server with:"
-        echo "   make server"
-        echo "   or"
-        echo "   ./scripts/server.sh"
+        echo "   ./scripts/linux/server.sh"
     else
         echo ""
         echo "❌ Setup failed. Please install Hugo manually."

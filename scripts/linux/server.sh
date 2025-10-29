@@ -16,7 +16,7 @@ elif [ -f "../bin/hugo" ]; then
 elif [ -f "./bin/hugo" ]; then
     HUGO_CMD="./bin/hugo"
 else
-    echo "❌ Hugo not found. Run 'make setup' or './scripts/setup.sh' first"
+    echo "❌ Hugo not found. Run './scripts/linux/setup.sh' first"
     exit 1
 fi
 
