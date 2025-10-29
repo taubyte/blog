@@ -8,7 +8,7 @@ tags:
   - programing
   - wasm
 image:
-  src: images/wasm-moore-law-opt.png
+  src: /images/wasm-moore-law-opt.png
   alt: Embracing WebAssembly for Post-Moore's Law Performance Challenges
 summary: As Moore's Law slows, performance gains must come from optimizing the "Top" of the computing stack—software, algorithms, and hardware architecture. WebAssembly (Wasm) is a key technology in this shift. Its compact binary format and near-native execution speed reduce software bloat, enhancing efficiency. Wasm's universal runtime environment ensures cross-platform compatibility, while its secure sandboxing provides robust security. Additionally, its modular design fosters the development of high-performance components. WebAssembly addresses the critical performance challenges.
 date: 2024-06-18 23:14:00Z

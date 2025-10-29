@@ -6,7 +6,7 @@ draft: false
 tags:
   - cloud
 image:
-  src: images/serverless-wasm-better-web-opt.png
+  src: /images/serverless-wasm-better-web-opt.png
   alt: Decap CMS
 summary: Serverless WebAssembly integrates the robust performance of WebAssembly with the scalable architecture of serverless environments. Developers can deploy code written in languages like Rust, C, or AssemblyScript directly to a serverless platform. This setup eliminates traditional server management overhead while enhancing security and efficiency. When triggered, the platform loads and executes the WebAssembly module on-demand, ensuring that resources are utilized only when necessary. This leads to rapid startup times, reduced latency, and optimizes performance for critical applications, making Serverless WebAssembly an ideal choice for developing modern, high-performance web applications.
 date: 2024-06-23 23:14:00Z

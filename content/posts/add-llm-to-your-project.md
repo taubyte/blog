@@ -10,7 +10,7 @@ tags:
   - wasm
   - golang
 image:
-  src: images/wasm-llama-sat-usage.png
+  src: /images/wasm-llama-sat-usage.png
   alt: Using LLAMA in WebAssembly
 summary:
   Using LLAMA in WebAssembly

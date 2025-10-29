@@ -6,7 +6,7 @@ draft: false
 tags:
   - cloud
 image:
-  src: images/undertanding-cloud-computing-opt.png
+  src: /images/undertanding-cloud-computing-opt.png
   alt: Understanding Cloud Computing
 summary:
   Cloud computing revolutionizes IT infrastructure by providing scalable and flexible resources over the internet. This approach eliminates the need for traditional on-premises hardware, offering services such as Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). These models enable dynamic scalability, cost efficiency, and robust security, supporting businesses in efficient resource management and innovation. Emerging trends like edge computing, serverless architectures, and AI integration highlight the evolving landscape, ensuring cloud computing remains integral to modern technology infrastructure.
