@@ -2,6 +2,11 @@
 
 Simple Hugo blog using PaperMod theme, deployed to GitHub Pages.
 
+## Prerequisites
+
+- Git installed ([Download](https://git-scm.com/downloads))
+- Terminal/Command Prompt access
+
 ## First Time Setup (New PC)
 
 ### 1. Clone the Repository
