@@ -10,7 +10,7 @@ tags:
   - cloud
   - devtools
 image:
-  src: /images/dreamland-illustration.png
+  src: /blog/images/dreamland-illustration.png
   alt: Introduction to Taubyte
 summary:
   Introduction to Taubyte
@@ -73,20 +73,20 @@ Also, `@blackhole` indicates that the node is part of the blackhole universe. Ea
 On the right side, you can see the TCP ports each node is using along with the number of copies.
 
 Now, let's leave the terminal and head to [console.taubyte.com](https://console.taubyte.com) where you're going to locate the Dreamland button. Then click on it.
-![](/images/webconsole-dreamland-btn.png)
+![](/blog/images/webconsole-dreamland-btn.png)
 
 > The button will be disabled or hidden if dreamland is not detected.
 
 Now, locate the sidebar: (1) click on Network, then (2) on blackhole.
-![](/images/webconsole-dreamland-select-universe.png)
+![](/blog/images/webconsole-dreamland-select-universe.png)
 
 After a few seconds, you should see something similar to:
-![](/images/webconsole-dreamland-universe.png)
+![](/blog/images/webconsole-dreamland-universe.png)
 
 On the network graph, which you can manipulate, you can see all the same nodes as before from the CLI.
 
 If you hover over any node, it'll display the TCP ports it's using.
-![](/images/webconsole-dreamland-hover-node.png)
+![](/blog/images/webconsole-dreamland-hover-node.png)
 
 
 ## What's with the mesh network?
@@ -124,21 +124,21 @@ Now, let's create a project on this cloud. Although it can be done using [tau-cl
 Open a new browser window or tab and navigate to [console.taubyte.com](https://console.taubyte.com).
 
 (1) Type your email, then (2) click on the network selection input, and finally (3) click on `Dreamland/blackhole`.
-![](/images/webconsole-dreamland-login-select-network.png)
+![](/blog/images/webconsole-dreamland-login-select-network.png)
 
 Next, click the `Login with GitHub` button.
-![](/images/webconsole-dreamland-login-github.png)
+![](/blog/images/webconsole-dreamland-login-github.png)
 
 You will be asked to grant the app GitHub access. This access is local to your browser and is used to create repositories related to your project, which will be cloned into a browser-based virtual file system.
 
 The next screen will display "Your projects" and should show no projects. You'll want to click on `Create project`.
-![](/images/webconsole-dreamland-new-project-btn.png)
+![](/blog/images/webconsole-dreamland-new-project-btn.png)
 
 Enter a project name, a description, toggle private (unless you want the project repositories to be public), then click on `Create Project`.
-![](/images/webconsole-dreamland-new-project-modal.png)
+![](/blog/images/webconsole-dreamland-new-project-modal.png)
 
 The Web Console will create two repositories: one for configuration, containing mainly YAML files, and another for inline code, containing code in different languages to be compiled to WebAssembly. If everything goes well, you'll be directed to the dashboard.
-![](/images/webconsole-dreamland-new-project-dashboard.png)
+![](/blog/images/webconsole-dreamland-new-project-dashboard.png)
 
 
 ## Creating a Function
@@ -146,19 +146,19 @@ The Web Console will create two repositories: one for configuration, containing 
 Taubyte-based Clouds support serverless functions. Let's create one!
 
 Click on `Functions` in the side menu, then on the `+` button.
-![](/images/webconsole-dreamland-new-function-dash.png)
+![](/blog/images/webconsole-dreamland-new-function-dash.png)
 
 To expedite the process, we'll use a template. Skip filling any field for now and click on the `Template Select` button.
-![](/images/webconsole-dreamland-new-function-modal.png)
+![](/blog/images/webconsole-dreamland-new-function-modal.png)
 
 This action opens another modal at the top where you can select a template. Although you can choose Go, Rust, or AssemblyScript at the time of writing this article, we'll keep it simple and go for Go! (pun intended). So: (1) select Go, (2) select `ping_pong`, and finally (3) close the modal.
-![](/images/webconsole-dreamland-new-function-template.png)
+![](/blog/images/webconsole-dreamland-new-function-template.png)
 
 All fields have been automatically filled except for the domains. Proceed by (1) clicking on the list and (2) selecting GeneratedDomain. This action will create a domain resource for you.
-![](/images/webconsole-dreamland-new-function-generated-domain.png)
+![](/blog/images/webconsole-dreamland-new-function-generated-domain.png)
 
 It's worth noting that the Web Console clones your repositories in-browser, meaning there's always a code equivalent to everything you do. Let's review the YAML config by clicking on the `Yaml` tab.
-![](/images/webconsole-dreamland-new-function-go-to-yaml.png)
+![](/blog/images/webconsole-dreamland-new-function-go-to-yaml.png)
 
 You will see YAML code resembling the following:
 ```yaml
@@ -184,10 +184,10 @@ Most of this YAML should be self-explanatory, but let me clarify a few points:
 - `execution.call`: specifies the function to be executed and must be exported by the WebAssembly module.
 
 Next, let's inspect the code. The Web Console features a modest code editor useful for quick inline code updates. Access it by clicking on the `Code` tab.
-![](/images/webconsole-dreamland-new-function-go-to-code.png)
+![](/blog/images/webconsole-dreamland-new-function-go-to-code.png)
 
 In the editor, you will observe (1) the usual Go files including go.mod, (2) the code for our handler function `ping`, and (3) a `.taubyte` folder defining how the function is built.
-![](/images/webconsole-dreamland-new-function-code.png)
+![](/blog/images/webconsole-dreamland-new-function-code.png)
 
 While understanding the entire code or mastering Go isn't necessary, I'll explain a few basic concepts that will map in a way or another to any serverless function in supported languages:
 
@@ -197,16 +197,16 @@ While understanding the entire code or mastering Go isn't necessary, I'll explai
 - Taubyte supports various trigger types, so handlers receive an event. We care about efficiency, so `event.Event` is  really a wrapper of a `uint32`, minimizing unnecessary memory allocation and copying.
 
 Click `Done` to proceed.
-![](/images/webconsole-dreamland-new-function-done.png)
+![](/blog/images/webconsole-dreamland-new-function-done.png)
 
 The function should now appear listed.
-![](/images/webconsole-dreamland-new-function-listed.png)
+![](/blog/images/webconsole-dreamland-new-function-listed.png)
 
 Everything done so far is confined to the virtual filesystem in your browser. To apply these changes, we need to push them. Find the green button at the bottom right of the screen and click on it.
-![](/images/webconsole-dreamland-new-function-push.png)
+![](/blog/images/webconsole-dreamland-new-function-push.png)
 
 A modal will guide you through the code changes, starting with configuration changes. Click on the domains folder, then open the GeneratedDomain.yaml file.
-![](/images/webconsole-dreamland-new-function-push-001.png)
+![](/blog/images/webconsole-dreamland-new-function-push-001.png)
 
 Copy the FQDN generated for you as we will need it later:
 ```yaml
@@ -214,10 +214,10 @@ fqdn: gftxhd6h0.blackhole.localtau
 ```
 
 Click on Next to review code changes.
-![](/images/webconsole-dreamland-new-function-push-002.png)
+![](/blog/images/webconsole-dreamland-new-function-push-002.png)
 
 One more click on Next takes you to the final step, where you'll (1) enter a commit message and (2) push the changes to GitHub.
-![](/images/webconsole-dreamland-new-function-push-003.png)
+![](/blog/images/webconsole-dreamland-new-function-push-003.png)
 
 In production, this push would trigger an event captured by `patrick`. However, because we're using `dreamland` and GitHub cannot reach your nodes directly, we run a fixture called `push-all` to emulate the git events. Switch back to your terminal and run:
 
@@ -228,10 +228,10 @@ $ dream inject push-all
 
 
 Return to the Web Console and, on the side menu, click on `Builds`. You should see two CI/CD jobs, one for configuration and one for code.
-![](/images/webconsole-dreamland-new-function-build.png)
+![](/blog/images/webconsole-dreamland-new-function-build.png)
 
 After a few seconds, the build should complete. Click on `Refresh` if it seems delayed. Then, click on the stack icon to view the ping_pong function.
-![](/images/webconsole-dreamland-new-function-build-open-details.png)
+![](/blog/images/webconsole-dreamland-new-function-build-open-details.png)
 
 
 ## Executing the Function
@@ -280,10 +280,10 @@ PONG
 ```
 
 If you've added the generated domain to your `/etc/hosts`, you can also use the Web Console to hit the function's endpoint: (1) In the sidebar, click on `Functions`, then (2) click on the thunder icon.
-![](/images/webconsole-dreamland-new-function-exec.png)
+![](/blog/images/webconsole-dreamland-new-function-exec.png)
 
 This action opens a new tab where you should see something like this:
-![](/images/webconsole-dreamland-new-function-exec-done.png)
+![](/blog/images/webconsole-dreamland-new-function-exec-done.png)
 
 Congratulations! You've successfully created a cloud and executed a serverless function on it!
 

@@ -6,7 +6,7 @@ draft: false
 tags:
   - cloud
 image:
-  src: /images/wasm-paas-idc-opt.png
+  src: /blog/images/wasm-paas-idc-opt.png
   alt: WebAssembly PaaS - A New Frontier in an AI-First World
 summary: WebAssembly PaaS is revolutionizing web application development by integrating Wasm with serverless architectures. According to an IDC report, these platforms achieve 100x faster cold start-up times, enabling concurrent execution of multiple applications and optimizing resource use. They support AI inferencing with models like Llama2, providing features such as sentence embeddings, vector-ready databases, and full-stack serverless support. By offering a consistent local and cloud development experience, these solutions enhance developer productivity and streamline database management, leading to faster time-to-market and cost efficiency. As the market evolves, WebAssembly PaaS platforms are set to redefine the future of scalable and efficient web applications.
 date: 2024-06-20 23:14:00Z

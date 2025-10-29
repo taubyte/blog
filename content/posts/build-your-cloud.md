@@ -12,7 +12,7 @@ tags:
   - golang
   - cloud
 image:
-  src: /images/decapcms.png
+  src: /blog/images/decapcms.png
   alt: Decap CMS
 summary:
   Add LLAMA Capability to Your Cloud

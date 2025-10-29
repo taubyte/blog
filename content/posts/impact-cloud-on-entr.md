@@ -6,7 +6,7 @@ draft: false
 tags:
   - cloud
 image:
-  src: /images/cloud-entr-art.png
+  src: /blog/images/cloud-entr-art.png
   alt: Decap CMS
 summary:
   Cloud computing incorporates essential elements such as virtualization, automation, and orchestration. Virtualization technology abstracts physical hardware, allowing for more efficient resource utilization and easier scalability. Automation minimizes the risk of human errors and increases operational efficiency by automating repetitive tasks. Orchestration manages complex workflows and services across various cloud environments, optimizing performance and resource usage. Together, these technologies enable businesses to adapt swiftly to market demands and scale operations efficiently.

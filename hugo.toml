@@ -10,7 +10,7 @@ title = "Taubyte Blog"
 description = "Official Taubyte blog featuring updates, tutorials, and insights on distributed computing and edge technology"
 keywords = ["Taubyte", "Blog", "Distributed Computing", "Edge Technology", "Cloud Native"]
 author = "Taubyte"
-images = ["images/logo.svg"]
+images = ["/blog/images/logo.svg"]
 DateFormat = "January 2, 2006"
 defaultTheme = "auto" # dark, light
 disableThemeToggle = false
@@ -34,11 +34,11 @@ tocopen = false
 [params.assets]
 # disableHLJS = true # to disable highlight.js
 # disableFingerprinting = true
-favicon = "images/logo.svg"
-favicon16x16 = "images/logo.svg"
-favicon32x32 = "images/logo.svg"
-apple_touch_icon = "images/logo.svg"
-safari_pinned_tab = "images/logo.svg"
+favicon = "/blog/images/logo.svg"
+favicon16x16 = "/blog/images/logo.svg"
+favicon32x32 = "/blog/images/logo.svg"
+apple_touch_icon = "/blog/images/logo.svg"
+safari_pinned_tab = "/blog/images/logo.svg"
 
 [params.label]
 text = "Powered by Taubyte"
