@@ -2,7 +2,7 @@
 # server.command - Double-click to start development server (macOS)
 # This script starts the Hugo development server
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/../.."
 
 # Open Terminal window if run from Finder
 if [ -t 0 ]; then

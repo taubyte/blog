@@ -2,7 +2,7 @@
 # setup.command - Double-click to install Hugo (macOS)
 # This script sets up Hugo for the blog
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/../.."
 
 # Open Terminal window if run from Finder
 if [ -t 0 ]; then

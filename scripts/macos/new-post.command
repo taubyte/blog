@@ -2,7 +2,7 @@
 # new-post.command - Double-click to create a new post (macOS)
 # This script prompts for post name and creates a new post
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/../.."
 
 # Prompt for post name
 POST_NAME=$(osascript -e 'Tell application "System Events" to display dialog "Enter post name:" default answer "" with title "Create New Post"' -e 'text returned of result' 2>/dev/null)

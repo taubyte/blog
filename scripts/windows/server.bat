@@ -3,6 +3,7 @@ REM server.bat - Double-click to start development server
 REM This script starts the Hugo development server
 
 cd /d "%~dp0"
+cd ..\..
 echo.
 echo ========================================
 echo    Starting Hugo Blog Server
@@ -31,7 +32,7 @@ if %ERRORLEVEL% EQU 0 (
 
 echo ERROR: Hugo not found!
 echo.
-echo Please run setup.bat first to install Hugo.
+echo Please run scripts\windows\setup.bat first to install Hugo.
 echo.
 echo Press any key to close this window...
 pause >nul

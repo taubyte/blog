@@ -12,17 +12,19 @@ Simple Hugo blog using PaperMod theme, deployed to GitHub Pages.
 ### Double-Click Setup (Easiest!)
 
 **Windows Users:**
-- Double-click `setup.bat` to install Hugo
-- Double-click `server.bat` to start the server
-- Double-click `new-post.bat` to create a new post
+- Double-click `scripts/windows/setup.bat` to install Hugo
+- Double-click `scripts/windows/server.bat` to start the server
+- Double-click `scripts/windows/new-post.bat` to create a new post
 
 **macOS Users:**
-- Double-click `setup.command` to install Hugo
-- Double-click `server.command` to start the server
-- Double-click `new-post.command` to create a new post
+- Double-click `scripts/macos/setup.command` to install Hugo
+- Double-click `scripts/macos/server.command` to start the server
+- Double-click `scripts/macos/new-post.command` to create a new post
 
 **Linux Users:**
-- Right-click scripts → Properties → Permissions → Check "Execute"
+- Double-click `scripts/linux/setup.sh` (make executable first)
+- Double-click `scripts/linux/server.sh` to start the server
+- Double-click `scripts/linux/new-post.sh` to create a new post
 - Or use terminal commands below
 
 ### Quick Setup (Terminal/Command Line)
@@ -214,6 +216,7 @@ GitHub Actions will automatically build and deploy to: https://taubyte.github.io
 ## Commands Reference
 
 **Double-Click Solutions:**
+
 - Windows: `setup.bat`, `server.bat`, `new-post.bat`
 - macOS: `setup.command`, `server.command`, `new-post.command`
 - Linux: Make scripts executable, then double-click

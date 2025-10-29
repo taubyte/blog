@@ -3,6 +3,7 @@ REM new-post.bat - Double-click to create a new post
 REM This script prompts for post name and creates a new post
 
 cd /d "%~dp0"
+cd ..\..
 echo.
 echo ========================================
 echo    Create New Blog Post
@@ -39,7 +40,7 @@ if %ERRORLEVEL% EQU 0 (
 )
 
 echo ERROR: Hugo not found!
-echo Please run setup.bat first to install Hugo.
+echo Please run scripts\windows\setup.bat first to install Hugo.
 pause
 exit /b 1
 

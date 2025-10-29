@@ -3,6 +3,7 @@ REM setup.bat - Double-click to install Hugo
 REM This script sets up Hugo for the blog
 
 cd /d "%~dp0"
+cd ..\..
 echo.
 echo ========================================
 echo    Hugo Blog Setup
