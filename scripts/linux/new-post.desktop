@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Create New Post
+Comment=Create a new blog post
+Exec=bash -c "cd '$(dirname %k)/../..' && ./scripts/linux/new-post-gui.sh"
+Icon=text-editor
+Terminal=false
+Path=
+Name[en]=Create New Post
+
+

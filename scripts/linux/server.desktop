@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Start Blog Server
+Comment=Start Hugo development server
+Exec=bash -c "cd '$(dirname %k)/../..' && ./server.sh"
+Icon=network-server
+Terminal=true
+Path=
+Name[en]=Start Blog Server
+
+

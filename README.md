@@ -12,20 +12,23 @@ Simple Hugo blog using PaperMod theme, deployed to GitHub Pages.
 ### Double-Click Setup (Easiest!)
 
 **Windows Users:**
+
 - Double-click `scripts/windows/setup.bat` to install Hugo
 - Double-click `scripts/windows/server.bat` to start the server
 - Double-click `scripts/windows/new-post.bat` to create a new post
 
 **macOS Users:**
+
 - Double-click `scripts/macos/setup.command` to install Hugo
 - Double-click `scripts/macos/server.command` to start the server
 - Double-click `scripts/macos/new-post.command` to create a new post
 
 **Linux Users:**
-- Double-click `scripts/linux/setup.sh` (make executable first)
-- Double-click `scripts/linux/server.sh` to start the server
-- Double-click `scripts/linux/new-post.sh` to create a new post
-- Or use terminal commands below
+
+- Double-click `scripts/linux/setup.desktop` to install Hugo (opens terminal)
+- Double-click `scripts/linux/server.desktop` to start the server (opens terminal)
+- Double-click `scripts/linux/new-post.desktop` to create a new post (GUI dialog)
+- Note: `.desktop` files enable true double-click execution (not text editor)
 
 ### Quick Setup (Terminal/Command Line)
 
@@ -217,9 +220,9 @@ GitHub Actions will automatically build and deploy to: https://taubyte.github.io
 
 **Double-Click Solutions:**
 
-- Windows: `setup.bat`, `server.bat`, `new-post.bat`
-- macOS: `setup.command`, `server.command`, `new-post.command`
-- Linux: Make scripts executable, then double-click
+- Windows: `scripts/windows/setup.bat`, `scripts/windows/server.bat`, `scripts/windows/new-post.bat`
+- macOS: `scripts/macos/setup.command`, `scripts/macos/server.command`, `scripts/macos/new-post.command`
+- Linux: `scripts/linux/setup.sh`, `scripts/linux/server.sh`, `scripts/linux/new-post.sh`
 
 **Using Make (Recommended for Terminal):**
 
