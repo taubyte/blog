@@ -7,9 +7,9 @@ theme = 'PaperMod'
 # Theme-specific parameters
 env = "production"
 title = "Taubyte Blog"
-description = "A modern blog built with Hugo and PaperMod theme"
-keywords = ["Blog", "PaperMod", "Hugo"]
-author = "Your Name"
+description = "Official Taubyte blog featuring updates, tutorials, and insights on distributed computing and edge technology"
+keywords = ["Taubyte", "Blog", "Distributed Computing", "Edge Technology", "Cloud Native"]
+author = "Taubyte"
 images = ["<link or path of image for opengraph, twitter-cards>"]
 DateFormat = "January 2, 2006"
 defaultTheme = "auto" # dark, light
@@ -48,12 +48,12 @@ iconHeight = 35
 # profile-mode
 [params.profileMode]
 enabled = false # needs to be explicitly set
-title = "ExampleSite"
-subtitle = "This is subtitle"
+title = "Taubyte"
+subtitle = "Distributed Computing & Edge Technology"
 imageUrl = "<title or url>"
 imageWidth = 120
 imageHeight = 120
-imageTitle = "my image"
+imageTitle = "Taubyte Logo"
 
 [[params.profileMode.buttons]]
 name = "Posts"
@@ -65,20 +65,20 @@ url = "/tags"
 
 # home-info mode
 [params.homeInfoParams]
-Title = "Hi there 👋"
-Content = "Welcome to my blog"
+Title = "Welcome to Taubyte Blog"
+Content = "Stay updated with the latest news, tutorials, and insights from the Taubyte team"
 
 [[params.socialIcons]]
 name = "twitter"
-url = "https://twitter.com/"
+url = "https://twitter.com/taubyte"
 
 [[params.socialIcons]]
-name = "stackoverflow"
-url = "https://stackoverflow.com"
+name = "instagram"
+url = "https://instagram.com/taubyte"
 
 [[params.socialIcons]]
 name = "github"
-url = "https://github.com/"
+url = "https://github.com/taubyte"
 
 [params.analytics.google]
 SiteVerificationTag = "XYZabc"
@@ -95,7 +95,7 @@ hiddenInList = true # hide on list pages and home
 hiddenInSingle = true # hide on single page
 
 [params.editPost]
-URL = "https://github.com/<path_to_repo>/content"
+URL = "https://github.com/taubyte/blog/content"
 Text = "Suggest Changes" # edit text
 appendFilePath = true # to append file path to Edit link
 
@@ -124,10 +124,16 @@ url = "/tags/"
 weight = 20
 
 [[menu.main]]
-identifier = "example"
-name = "Example.org"
-url = "https://example.org"
+identifier = "docs"
+name = "Documentation"
+url = "https://tau.how"
 weight = 30
+
+[[menu.main]]
+identifier = "website"
+name = "Website"
+url = "https://taubyte.com"
+weight = 40
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses = true
