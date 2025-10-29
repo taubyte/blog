@@ -16,7 +16,7 @@ Write your introduction here. This is your opening paragraph that hooks readers.
 Add your main content here. Use Markdown formatting:
 
 - **Bold text** for emphasis
-- *Italic text* for subtle emphasis
+- _Italic text_ for subtle emphasis
 - Links: [text](https://example.com)
 - Lists are easy to create
 
@@ -47,5 +47,4 @@ Wrap up your post with a thoughtful conclusion.
 
 ---
 
-*Happy blogging!*
-
+_Happy blogging!_

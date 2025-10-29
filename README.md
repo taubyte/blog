@@ -9,18 +9,37 @@ Simple Hugo blog using PaperMod theme, deployed to GitHub Pages.
 
 ## First Time Setup (New PC)
 
-### 1. Clone the Repository
+### Quick Setup (Recommended)
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/taubyte/blog.git
 cd blog
+
+# 2. Run automated setup (installs Hugo automatically)
+make setup
+# or
+./scripts/setup.sh
+
+# 3. Start the development server
+make server
+# or
+./scripts/server.sh
 ```
 
-### 2. Install Hugo
+That's it! The setup script will:
+- Detect your operating system
+- Download and install Hugo Extended automatically
+- Verify the installation
+
+### Manual Setup (Alternative)
+
+If you prefer to install Hugo manually:
 
 **Option A: Download Hugo Binary (Recommended)**
 
 **Linux:**
+
 ```bash
 # Create bin directory
 mkdir -p ../bin
@@ -38,6 +57,7 @@ cd blog
 ```
 
 **macOS:**
+
 ```bash
 # Create bin directory
 mkdir -p ../bin
@@ -55,6 +75,7 @@ cd blog
 ```
 
 **Windows:**
+
 ```powershell
 # Create bin directory
 mkdir ..\bin
@@ -87,39 +108,33 @@ choco install hugo-extended
 **Option C: Install Globally (Alternative)**
 
 If Hugo is installed globally (via package manager), you can use `hugo` directly instead of `../bin/hugo`:
+
 ```bash
 # Then use:
 hugo server --bind=0.0.0.0 --port=1313
 hugo new content posts/name.md
 ```
 
-### 3. Start Development Server
-
-```bash
-cd blog
-../bin/hugo server --bind=0.0.0.0 --port=1313
-```
-
-Visit: http://localhost:1313/blog/
-
 ## Quick Start
 
 ### Start Development Server
 
 ```bash
-cd blog
-../bin/hugo server --bind=0.0.0.0 --port=1313
+make server
+# or
+./scripts/server.sh
 ```
 
 Visit: http://localhost:1313/blog/
 
 ### Create New Post
 
-**Method 1: Using Hugo Command (Recommended)**
+**Method 1: Using Make Command (Easiest)**
 
 ```bash
-cd blog
-../bin/hugo new content posts/your-post-name.md
+make new POST=your-post-name
+# or
+./scripts/new-post.sh your-post-name
 ```
 
 This creates a new post with frontmatter. Edit the file and:
@@ -160,14 +175,18 @@ Your content goes here.
 ### Build Site
 
 ```bash
-cd blog
-../bin/hugo --minify
+make build
 ```
 
 ### Publish to GitHub Pages
 
 ```bash
-cd blog
+# Option 1: Use make publish (stages changes)
+make publish
+git commit -m "Your commit message"
+git push origin main
+
+# Option 2: Manual git workflow
 git add .
 git commit -m "Your commit message"
 git push origin main
@@ -177,10 +196,23 @@ GitHub Actions will automatically build and deploy to: https://taubyte.github.io
 
 ## Commands Reference
 
-- `../bin/hugo server` - Start development server (or `hugo server` if installed globally)
-- `../bin/hugo new content posts/name.md` - Create new post
-- `../bin/hugo --minify` - Build site for production
-- `git push origin main` - Deploy to GitHub Pages
+**Using Make (Recommended):**
+- `make help` - Show all available commands
+- `make setup` - Install Hugo automatically
+- `make server` - Start development server
+- `make new POST=name` - Create new post
+- `make build` - Build site for production
+- `make clean` - Clean generated files
+- `make publish` - Build and stage for git
+
+**Using Scripts:**
+- `./scripts/setup.sh` - Install Hugo
+- `./scripts/server.sh` - Start server
+- `./scripts/new-post.sh <name>` - Create post
+
+**Direct Hugo Commands:**
+- `hugo server` (if Hugo is in PATH)
+- `../bin/hugo server` (if using local binary)
 
 ## File Structure
 
