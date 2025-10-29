@@ -16,31 +16,37 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Install Hugo
-        run: |
-          wget -O /tmp/hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.152.2/hugo_extended_0.152.2_linux-amd64.tar.gz
-          tar -xzf /tmp/hugo.tar.gz -C /tmp
-          sudo mv /tmp/hugo /usr/local/bin/
-          hugo version
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.131.0'
+          extended: true
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v4
 
-      - name: Build
-        run: hugo --minify --gc
+      - name: Build with Hugo
+        run: |
+          hugo --minify --gc --cleanDestinationDir
+        env:
+          HUGO_ENV: production
 
-      - name: Upload
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
