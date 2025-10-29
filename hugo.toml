@@ -80,6 +80,10 @@ url = "https://instagram.com/dtaubyte"
 name = "github"
 url = "https://github.com/taubyte"
 
+[[params.socialIcons]]
+name = "discord"
+url = "https://discord.gg/taubyte"
+
 [params.analytics.google]
 SiteVerificationTag = "XYZabc"
 
