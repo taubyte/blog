@@ -1,6 +1,6 @@
 # Production environment configuration
-baseURL = ''
-
+baseURL = '/blog/'
+relativeURLs = true
 [params]
 env = "production"
 images = ["/blog/images/logo.svg"]
