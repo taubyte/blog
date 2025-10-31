@@ -1,14 +1,14 @@
 # Production environment configuration
-baseURL = '/blog/'
+baseURL = '.'
 relativeURLs = true
 [params]
 env = "production"
-images = ["/blog/images/logo.svg"]
+images = ["/images/logo.svg"]
 
 [params.assets]
-favicon = "/blog/images/logo.svg"
-favicon16x16 = "/blog/images/logo.svg"
-favicon32x32 = "/blog/images/logo.svg"
-apple_touch_icon = "/blog/images/logo.svg"
-safari_pinned_tab = "/blog/images/logo.svg"
+favicon = "/images/logo.svg"
+favicon16x16 = "/images/logo.svg"
+favicon32x32 = "/images/logo.svg"
+apple_touch_icon = "/images/logo.svg"
+safari_pinned_tab = "/images/logo.svg"
 
