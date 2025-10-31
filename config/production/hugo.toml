@@ -1,5 +1,5 @@
 # Production environment configuration
-baseURL = 'https://taubyte.github.io/blog/'
+baseURL = ''
 
 [params]
 env = "production"
