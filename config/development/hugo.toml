@@ -1,0 +1,14 @@
+# Development environment configuration
+baseURL = 'http://localhost:1313/'
+
+[params]
+env = "development"
+images = ["/images/logo.svg"]
+
+[params.assets]
+favicon = "/images/logo.svg"
+favicon16x16 = "/images/logo.svg"
+favicon32x32 = "/images/logo.svg"
+apple_touch_icon = "/images/logo.svg"
+safari_pinned_tab = "/images/logo.svg"
+
