@@ -2,6 +2,7 @@
 languageCode = 'en-us'
 title = 'Taubyte Blog'
 theme = 'PaperMod'
+googleAnalytics = 'G-VVFE939YJ3'
 
 [params]
 # Theme-specific parameters
