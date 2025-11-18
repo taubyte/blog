@@ -1,5 +1,5 @@
 ---
-title: Build with Taubyte: Online Marketplace Part 1
+title: "Build with Taubyte: Online Marketplace Part 1"
 author: Zaoui Amine
 featured: true
 draft: false
@@ -9,11 +9,11 @@ tags:
 image:
   src: /blog/images/cloud-computing-market-trend-ai-opt.png
   alt: The Growth and Evolution of the Cloud Computing Market
-summary:
-    Step-by-step tutorial on creating a full online marketplace using Taubyte. Covers setting up a local development environment with Dream Desktop, creating a universe, building modular backend services like Auth Service with serverless functions, configuring a database, setting up a minimal VueJS + Tailwind frontend, and deploying everything via Taubyte while maintaining a smooth local “vibe coding” workflow.
+summary: Step-by-step tutorial on creating a full online marketplace using Taubyte. Covers setting up a local development environment with Dream Desktop, creating a universe, building modular backend services like Auth Service with serverless functions, configuring a database, setting up a minimal VueJS + Tailwind frontend, and deploying everything via Taubyte while maintaining a smooth local “vibe coding” workflow.
 date: 2024-06-27 23:14:00Z
 categories: [Insights]
 ---
+
 In this tutorial, we’ll go step by step through building a fully functional online marketplace using **Taubyte**. The focus is on a smooth “vibe coding” experience - local development first, then pushing to production.
 
 ---
@@ -24,23 +24,17 @@ We start by creating a **local environment** using the **Dream Desktop** program
 
 1. Open Dream Desktop and create a **Universe**.
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5puzx0y1tayabp1x8rdc.png)
-2. Connect to it via the console at [console.taubyte.com](https://console.taubyte.com).
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5puzx0y1tayabp1x8rdc.png) 2. Connect to it via the console at [console.taubyte.com](https://console.taubyte.com).
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d0bu7mtpljnunppkgquu.png)
-
 
 3. Choose the universe, enter your email, and connect with GitHub.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/n77pdiogq0x1cwl6suii.jpg)
 
-
 4. Create a project in the console.
 
-
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/bd1j7fpjmv0njyj80o6i.png)
-
-
 
 ---
 
@@ -54,23 +48,18 @@ Create an **application** for the Auth Service.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w2y57kcyti6ts7ofdezx.png)
 
-
-
 ---
 
 ## Step 3: Pushing from Dream Desktop
 
 Once the application is ready:
 
-* Push all changes from Dream Desktop.
-* Normally, builds are triggered automatically via a webhook from GitHub.
-* Locally, simulate this webhook with a **push button** on Dream Desktop.
-* This creates a **local test cloud** instead of deploying to a production node.
-
+- Push all changes from Dream Desktop.
+- Normally, builds are triggered automatically via a webhook from GitHub.
+- Locally, simulate this webhook with a **push button** on Dream Desktop.
+- This creates a **local test cloud** instead of deploying to a production node.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ohd3a6iniorgtnogqm87.png)
-
-
 
 ---
 
@@ -78,8 +67,8 @@ Once the application is ready:
 
 We won’t use inline code for serverless functions - it’s messy to maintain. Instead:
 
-* Use **Taubyte libraries** (distinct Git repos) as the code source.
-* Each serverless function takes its code from the library.
+- Use **Taubyte libraries** (distinct Git repos) as the code source.
+- Each serverless function takes its code from the library.
 
 Steps:
 
@@ -90,7 +79,6 @@ Steps:
 2. Push again from Dream Desktop.
 3. Clone the backend library from GitHub.
 
-
 ---
 
 ## Step 5: Auth Service API
@@ -98,15 +86,15 @@ Steps:
 We’ll use [agents.doc](https://github.com/taubyte/agents.doc) as documentation. Prompt your AI to generate code:
 
 ```
-"Create a fully functioning simple Auth CRUD API using JWT. 
-Use different files for organization. 
-Use only simple and necessary code. 
+"Create a fully functioning simple Auth CRUD API using JWT.
+Use different files for organization.
+Use only simple and necessary code.
 Use agents.doc as docs for Taubyte."
 ```
 
 The AI generates:
 
-* **Handlers & exported logic** → serverless functions.
+- **Handlers & exported logic** → serverless functions.
 
 Serverless function endpoints:
 
@@ -124,13 +112,12 @@ Serverless function endpoints:
 
 1. Push to GitHub, then create serverless functions in the console:
 
-   * Set timeout and path.
-   * Pick the domain.
-   * Source code = backend library.
-   * Entry point = exported function from Go library.
+   - Set timeout and path.
+   - Pick the domain.
+   - Source code = backend library.
+   - Entry point = exported function from Go library.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s4hx8d6ivmpxdzjgjckf.png)
-
 
 2. Push console config, then push build from Dream Desktop.
 
@@ -138,11 +125,10 @@ Serverless function endpoints:
 
 ## Step 7: Database Setup
 
-* Create a database from the console called `data`.
-* Push again from the console after creation.
+- Create a database from the console called `data`.
+- Push again from the console after creation.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xvwwaeqmhilrelq80kcn.png)
-
 
 ---
 
@@ -195,7 +181,6 @@ curl -X DELETE <BASE_URL>/api/auth/deleteuser \
 -d '{"id":"<USER_ID>"}'
 ```
 
-
 Backend library example: [tb_library_auth_service](https://github.com/ghir-hak/tb_library_auth_service)
 
 ---
@@ -206,43 +191,36 @@ Backend library example: [tb_library_auth_service](https://github.com/ghir-hak/t
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4emcall27yrdfdxbyu6r.png)
 
-
 2. Push to GitHub, then open it in Dream Desktop.
 
 3. Use **Vite + VueJS + Tailwind** to create a frontend project.
 
-   * Keep the `.taubyte` folder created by Taubyte (essential for build).
+   - Keep the `.taubyte` folder created by Taubyte (essential for build).
 
 4. Prompt AI:
 
 ```
-"Use TailwindCSS to create a minimalist elegant Auth page. 
-Use the .env file for the base URL. 
+"Use TailwindCSS to create a minimalist elegant Auth page.
+Use the .env file for the base URL.
 Use window.location.origin for API calls."
 ```
 
 5. Include the **curl commands** above for reference.
 6. Test locally, make tweaks, then push to GitHub to trigger a build via Dream Desktop.
 
-
-
 ---
 
 ## Step 10: Final Config Tweaks
 
-* Add `build.sh` and `config.yaml` in `.taubyte` folder for Vite projects.
+- Add `build.sh` and `config.yaml` in `.taubyte` folder for Vite projects.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/mlmc7wznpvvrg5nlcgcy.png)
 
-
-* Update serverless function domains if needed.
-* Push console config and trigger build.
-* Visit your website via the **lightning button** in the console.
-
+- Update serverless function domains if needed.
+- Push console config and trigger build.
+- Visit your website via the **lightning button** in the console.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/1iluflrlgzmwoudstj9w.png)
-
-
 
 **Important:** Ensure the **library domain** and **website domain** match. Otherwise, `window.location.origin` won’t work correctly.
 
@@ -253,5 +231,3 @@ Use window.location.origin for API calls."
 Following these steps, you now have a fully functioning **online marketplace** built on **Taubyte**, complete with backend services, JWT-secured serverless functions, a database, and a minimal VueJS + Tailwind frontend.
 
 This approach keeps everything **modular, maintainable, and ready for production** while allowing you to **vibe code locally**.
-
-

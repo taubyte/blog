@@ -1,5 +1,5 @@
 ---
-title: Build with Taubyte: Online Marketplace Part 2
+title: "Build with Taubyte: Online Marketplace Part 2"
 author: Zaoui Amine
 featured: true
 draft: false
@@ -9,11 +9,11 @@ tags:
 image:
   src: /blog/images/cloud-computing-market-trend-ai-opt.png
   alt: The Growth and Evolution of the Cloud Computing Market
-summary:
-    Focuses on creating a User Service for managing user profiles and settings within the marketplace. Shows how to set up the service application in Taubyte, define API endpoints for CRUD operations on users, push changes via Dream Desktop, configure serverless functions, connect to the database, and test endpoints. Emphasizes modular design and using AI for generating boilerplate code while keeping local development first.
+summary: Focuses on creating a User Service for managing user profiles and settings within the marketplace. Shows how to set up the service application in Taubyte, define API endpoints for CRUD operations on users, push changes via Dream Desktop, configure serverless functions, connect to the database, and test endpoints. Emphasizes modular design and using AI for generating boilerplate code while keeping local development first.
 date: 2024-06-27 23:14:00Z
 categories: [Insights]
 ---
+
 In the first article, we built the **AuthService** - the backbone of user **authentication** in our Taubyte-powered marketplace.
 Today, we move to the **UserService**, the part of the backend responsible for **user profiles, settings, password changes, and preferences**.
 
@@ -25,15 +25,11 @@ Just like before, everything is created locally using **Dream Desktop**, then pu
 
 Before anything else, start the same universe we created in Part 1.
 
-
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ul1xoi3e8ho7d0t0u32t.jpg)
-
-
 
 Open **console.taubyte.com**, select your universe, and enter the dashboard.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5sz9pehmv1uubigjn4p7.png)
-
 
 ---
 
@@ -42,15 +38,12 @@ Open **console.taubyte.com**, select your universe, and enter the dashboard.
 Inside the Applications tab, create a new **UserService** library.
 This service will handle:
 
-* Fetching the user profile
-* Updating profile details
-* Changing password
-* Updating language / notification / display preferences
-
+- Fetching the user profile
+- Updating profile details
+- Changing password
+- Updating language / notification / display preferences
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o2la92ra1qxu2qjl2btj.jpg)
-
-
 
 Just like AuthService, we don’t write inline code.
 We create a dedicated backend library.
@@ -61,19 +54,13 @@ We create a dedicated backend library.
 
 Create a new **Golang library** named **user-service**.
 
-
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7nm2q3zhgxauo5pry4wb.png)
-
-
 
 Push from Dream Desktop to generate the config + code build jobs.
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ae6oouw7qi4tvbe13sv0.jpg)
 
-
-
 Once both jobs succeed, open your editor (Cursor) and clone the repo:
-
 
 ```bash
 git clone https://github.com/.../tb_library_user_service
@@ -91,9 +78,9 @@ Now the library is ready for code.
 
 ## **4. Use AI to Generate the UserService Code**
 
-Inside Cursor,clone the library repository then prompt the AI with the following:
+Inside Cursor, clone the library repository then prompt the AI with the following:
 
-```
+```text
 Create a CRUD user service with these routes:
 - get user profile
 - update profile
@@ -116,16 +103,16 @@ Use the planning method.
 
 AI generates the plan, then builds:
 
-* `model.go`
-* `jwt.go` (token validation copied from AuthService)
-* `database.go`
-* `utils.go`
-* `handlers.go` with 4 exported functions:
+- `model.go`
+- `jwt.go` (token validation copied from AuthService)
+- `database.go`
+- `utils.go`
+- `handlers.go` with 4 exported functions:
 
-  * `GetUserProfile`
-  * `UpdateUserProfile`
-  * `ChangePassword`
-  * `UpdatePreferences`
+  - `GetUserProfile`
+  - `UpdateUserProfile`
+  - `ChangePassword`
+  - `UpdatePreferences`
 
 You now have a complete backend.
 
@@ -146,32 +133,29 @@ each using the **user-service** library as the source and the exported handler a
 
 ### **1. Get User Profile**
 
-* **Method:** GET
-* **Path:** `/api/users`
-* **Entry point:** `GetUserProfile`
+- **Method:** GET
+- **Path:** `/api/users`
+- **Entry point:** `GetUserProfile`
 
 ### **2. Update User Profile**
 
-* **Method:** PUT
-* **Path:** `/api/users`
-* **Entry point:** `UpdateUserProfile`
+- **Method:** PUT
+- **Path:** `/api/users`
+- **Entry point:** `UpdateUserProfile`
 
 ### **3. Change Password**
 
-* **Method:** PUT
-* **Path:** `/api/users/password`
-* **Entry point:** `ChangePassword`
+- **Method:** PUT
+- **Path:** `/api/users/password`
+- **Entry point:** `ChangePassword`
 
 ### **4. Update Preferences**
 
-* **Method:** PUT
-* **Path:** `/api/users/preferences`
-* **Entry point:** `UpdatePreferences`
-
+- **Method:** PUT
+- **Path:** `/api/users/preferences`
+- **Entry point:** `UpdatePreferences`
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/89eyvmzg9fa9hpwhyh6v.png)
-
-
 
 Push the config from the console, then push again from Dream Desktop to trigger builds.
 
@@ -193,7 +177,7 @@ curl -X POST https://YOUR_DOMAIN/api/auth/login \
 Response:
 
 ```json
-{"token":"YOUR_JWT_TOKEN"}
+{ "token": "YOUR_JWT_TOKEN" }
 ```
 
 Use this token in all next requests:
@@ -274,10 +258,10 @@ Update dashboard UI.
 
 AI generates:
 
-* API client functions
-* UI logic
-* Form components
-* Error handling
+- API client functions
+- UI logic
+- Form components
+- Error handling
 
 Push the frontend to github:
 
@@ -289,10 +273,7 @@ git push
 
 Trigger a build from Dream Desktop.
 
-
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ffjbvg0s4pfaeeyu5gc.jpg)
-
-
 
 If the build fails, copy the error logs → paste into AI → fix → push again.
 
@@ -302,19 +283,16 @@ Once the job succeeds, visit your deployed website using the lightning button ne
 
 ## **8. Full Frontend Flow**
 
-* Register
-* Login
-* Token stored
-* Token used for all secure requests
-* Profile loads correctly
-* Updating profile works
-* Changing password works
-* Preferences update instantly
-
+- Register
+- Login
+- Token stored
+- Token used for all secure requests
+- Profile loads correctly
+- Updating profile works
+- Changing password works
+- Preferences update instantly
 
 ![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/83f6qy3msqynk0bjmhrg.jpg)
-
-
 
 ---
 
@@ -322,16 +300,15 @@ Once the job succeeds, visit your deployed website using the lightning button ne
 
 In **Part 2**, we created a complete **UserService**:
 
-* Backend library
-* AI-generated CRUD logic
-* JWT-protected routes
-* Serverless functions
-* Curl-tested endpoints
-* Frontend integration
+- Backend library
+- AI-generated CRUD logic
+- JWT-protected routes
+- Serverless functions
+- Curl-tested endpoints
+- Frontend integration
 
 Your marketplace now has:
 
-* **Authentication**
-* **User profiles**
-* **Preferences system**
-
+- **Authentication**
+- **User profiles**
+- **Preferences system**
