@@ -1,5 +1,5 @@
 ---
-title: Building a Full Online Marketplace with Taubyte pt2
+title: Build with Taubyte: Online Marketplace Part 2
 author: Zaoui Amine
 featured: true
 draft: false
@@ -14,7 +14,7 @@ summary:
 date: 2024-06-27 23:14:00Z
 categories: [Insights]
 ---
-In the first episode, we built the **AuthService** - the backbone of user **authentication** in our Taubyte-powered marketplace.
+In the first article, we built the **AuthService** - the backbone of user **authentication** in our Taubyte-powered marketplace.
 Today, we move to the **UserService**, the part of the backend responsible for **user profiles, settings, password changes, and preferences**.
 
 Just like before, everything is created locally using **Dream Desktop**, then pushed and deployed through **console.taubyte.com**, following the same “local first → production later” workflow.
