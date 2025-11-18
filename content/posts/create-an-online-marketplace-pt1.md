@@ -1,12 +1,19 @@
-+++
-title = 'Building a Full Online Marketplace with Taubyte'
-date = 2025-10-29T12:00:00+01:00
-draft = false
-description = "using ai to build a full taubyte online marketplace"
-tags = ["serverless", "taubyte"]
-categories = ["taubyte"]
-+++
-
+---
+title: Building a Full Online Marketplace with Taubyte
+author: Zaoui Amine
+featured: true
+draft: false
+tags:
+  - cloud
+  - ai
+image:
+  src: /blog/images/cloud-computing-market-trend-ai-opt.png
+  alt: The Growth and Evolution of the Cloud Computing Market
+summary:
+  The cloud computing market is experiencing rapid growth, driven by technological advancements and the increasing demand for scalable and efficient IT solutions. With a projected CAGR of 14.1% from 2023 to 2030, this expansion is fueled by the integration of artificial intelligence (AI) within cloud platforms, enhancing capabilities in data analysis, automation, and machine learning applications. Companies like Amazon Web Services (AWS) are at the forefront, leveraging AI to drive innovation and expand their service offerings. As AI becomes more integral to cloud computing, businesses are better equipped to navigate the digital landscape, fostering operational efficiency and opening new avenues for growth and development.
+date: 2024-06-27 23:14:00Z
+categories: [Insights]
+---
 In this tutorial, we’ll go step by step through building a fully functional online marketplace using **Taubyte**. The focus is on a smooth “vibe coding” experience - local development first, then pushing to production.
 
 ---
