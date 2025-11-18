@@ -6,9 +6,9 @@ env = "production"
 images = ["/blog/opengraph.jpg"]
 
 [params.assets]
-favicon = "/blog/logo.png"
-favicon16x16 = "/blog/logo.png"
-favicon32x32 = "/blog/logo.png"
-apple_touch_icon = "/blog/logo.png"
-safari_pinned_tab = "/blog/logo.png"
+favicon = "/blog/logo.svg"
+favicon16x16 = "/blog/logo.svg"
+favicon32x32 = "/blog/logo.svg"
+apple_touch_icon = "/blog/logo.svg"
+safari_pinned_tab = "/blog/logo.svg"
 

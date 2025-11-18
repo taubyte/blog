@@ -6,9 +6,9 @@ env = "development"
 images = ["/opengraph.jpg"]
 
 [params.assets]
-favicon = "/logo.png"
-favicon16x16 = "/logo.png"
-favicon32x32 = "/logo.png"
-apple_touch_icon = "/logo.png"
-safari_pinned_tab = "/logo.png"
+favicon = "/logo.svg"
+favicon16x16 = "/logo.svg"
+favicon32x32 = "/logo.svg"
+apple_touch_icon = "/logo.svg"
+safari_pinned_tab = "/logo.svg"
 
