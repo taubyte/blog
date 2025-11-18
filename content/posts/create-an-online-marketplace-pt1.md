@@ -1,5 +1,5 @@
 ---
-title: Building a Full Online Marketplace with Taubyte
+title: Building a Full Online Marketplace with Taubyte pt1
 author: Zaoui Amine
 featured: true
 draft: false
