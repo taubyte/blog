@@ -103,7 +103,7 @@ The diagram utilizes an **Eventual Consistency** model using background workers 
 ### The Inbound Sync (Keeping Stock Accurate)
 We cannot rely solely on the cache forever, as inventory might change due to external factors (e.g., warehouse restocks).
 
-We define a Taubyte **Timer Function** that runs periodically (e.g., every 5 minutes).
+We define a Taubyte **Cron Function** that runs periodically (e.g., every 5 minutes).
 * **Task:** It connects to the "Source of Truth" (e.g., a legacy SQL database or ERP API), fetches the true inventory levels, and updates the **Stock Cache** KV. This ensures the cache never drifts too far from reality.
 
 ### The Outbound Sync (Finalizing Orders)
@@ -112,7 +112,7 @@ Once an order reaches the "Fulfill" or "Refund" state in the hot path, it needs 
 A final asynchronous `Sync` process is triggered. It reads the completed order state from the **Order Cache**, combines it with fulfillment data, and pushes it to the **Source of Truth** for long-term storage, marking the workflow as "Done."
 
 ![The Synchronization Layer](/blog/images/TheBackgroundSynchronizationLayer.jpg)
-*(Caption: The synchronization layer. Background timer functions ensure the fast caches are eventually consistent with the persistent Source of Truth database.)*
+*(Caption: The synchronization layer. Background Cron functions ensure the fast caches are eventually consistent with the persistent Source of Truth database.)*
 
 ---
 
@@ -139,7 +139,7 @@ Ready to build your own high-performance order processing system? Here's how to 
 1. **Set up Taubyte locally:** Install [Dream](https://github.com/taubyte/dream) to create a local cloud environment for rapid development and testing
 2. **Define your functions:** Start with the order registration function using Taubyte's [HTTP functions](https://tau.how/development/functions/)
 3. **Configure KV databases:** Set up your Order Cache and Stock Cache using Taubyte's [KV database](https://tau.how/development/databases/) capabilities
-4. **Implement sync workers:** Create timer functions for bidirectional synchronization with your source of truth
+4. **Implement sync workers:** Create Cron functions for bidirectional synchronization with your source of truth
 5. **Test and deploy:** Use Taubyte's local development tools to test the complete workflow before deploying to production
 
 For detailed implementation guides and documentation, explore the [Taubyte documentation](https://tau.how) or check out our [YouTube channel](https://www.youtube.com/channel/UCfQgDoW17H3eBqF-c8tAQAA) for tutorials and examples.
