@@ -21,7 +21,6 @@ date: 2025-01-29T12:00:00Z
 categories: [Hand-on Learning]
 ---
 
-# Building a Resilient, Low Latency Order Processing System with Taubyte
 
 In modern e-commerce, **latency is a revenue killer**. When a user clicks "Buy," they expect instant feedback. Traditional cloud architectures often force developers to glue together dozens of complex, centralized services (like AWS Step Functions, Lambda, and RDS), introducing latency and operational overhead.
 
@@ -49,7 +48,7 @@ The entire infrastructure is defined in code, ensuring reproducibility and simpl
 
 Below is the complete workflow we will be implementing.
 
-![Full System Architecture](/blog/images/full diagram.jpg)
+![Full System Architecture](/blog/images/fulldiagram.jpg)
 *(Caption: The complete asynchronous order processing and synchronization workflow.)*
 
 ---
@@ -90,7 +89,7 @@ If stock is available, the `fulfill` function executes. Crucially, it performs a
 ### Branch B: Refund (The Failure Path)
 If the cache indicates out-of-stock, the flow triggers a `refund` function, which calls the payment provider API to reverse the charge and alerts the user.
 
-![The Inventory Decision Engine](/blog/images/The Inventory Decision Engine.jpg)
+![The Inventory Decision Engine](/blog/images/TheInventoryDecisionEngine.jpg)
 *(Caption: The decision engine. The system uses a fast KV lookup to determine available stock, splitting the workflow into fulfillment or refund paths.)*
 
 ---
@@ -112,18 +111,10 @@ Once an order reaches the "Fulfill" or "Refund" state in the hot path, it needs 
 
 A final asynchronous `Sync` process is triggered. It reads the completed order state from the **Order Cache**, combines it with fulfillment data, and pushes it to the **Source of Truth** for long-term storage, marking the workflow as "Done."
 
-![The Synchronization Layer](/blog/images/The Background Synchronization Layer.jpg)
+![The Synchronization Layer](/blog/images/TheBackgroundSynchronizationLayer.jpg)
 *(Caption: The synchronization layer. Background timer functions ensure the fast caches are eventually consistent with the persistent Source of Truth database.)*
 
 ---
-
-## Key Takeaways
-
-- **Edge caching** decouples user experience from backend database latency
-- **Eventual consistency** enables speed without sacrificing data integrity
-- **WebAssembly functions** provide near-instant cold starts (microseconds vs. seconds)
-- **Infrastructure as code** ensures reproducible, maintainable deployments
-- **Resilience** is built-in: the system continues operating even if the source of truth is unavailable
 
 ## Why This Architecture Wins
 
