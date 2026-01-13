@@ -13,7 +13,7 @@ tags:
   - low-latency
   - architecture
 image:
-  src: /blog/images/fulldiagram.jpg
+  src: /blog/images/fullDiagram.jpg
   alt: Building a Resilient, Low Latency Order Processing System with Taubyte
 summary:
   An architect’s blueprint for a low-latency, resilient order-processing flow on Taubyte: keep the checkout hot path fast with distributed caches and lightweight functions, then converge inventory and orders into your system of record via background reconciliation. Includes a sovereignty-focused comparison vs. centralized managed-cloud orchestration.
@@ -54,7 +54,7 @@ We remove the “central database bottleneck” from the customer checkout exper
 
 Below is the complete workflow we will be implementing.
 
-![Full System Architecture](/blog/images/fulldiagram.jpg)
+![Full System Architecture](/blog/images/fullDiagram.jpg)
 *(Caption: The complete asynchronous order processing and synchronization workflow.)*
 
 ---
@@ -71,7 +71,7 @@ Instead of going straight to a heavyweight database, the function immediately wr
 ### 2. Payment Processing
 Next comes payment. A function calls your Payment Provider (e.g., Stripe). The result (success/failure) is written back into the **Order Cache** immediately, keeping the workflow state centralized without involving the system of record in the hot path.
 
-![The Hot Path: Intake and Payment](/blog/images/TheIntakeandPaymentHotPath.jpg)
+![The Hot Path: Intake and Payment](/blog/images/orderRegistration.jpg)
 *(Caption: The high-speed intake. User requests are immediately accepted and stored in a fast distributed cache, decoupling the user from backend complexity.)*
 
 ---
@@ -95,7 +95,7 @@ If stock is available, we proceed to fulfillment. At this moment, we **reserve t
 ### Branch B: Refund (The Failure Path)
 If the cache indicates out-of-stock (or payment failed), we trigger a refund and notify the customer. The key is that failure handling is part of the workflow, not an afterthought.
 
-![The Inventory Decision Engine](/blog/images/TheInventoryDecisionEngine.jpg)
+![The Inventory Decision Engine](/blog/images/inventory.jpg)
 *(Caption: The decision engine. The system uses a fast cache lookup to determine available stock, splitting the workflow into fulfillment or refund paths.)*
 
 ---
@@ -117,7 +117,7 @@ Once an order reaches the "Fulfill" or "Refund" state in the hot path, it needs 
 
 A background sync process reads final order state from the **Order Cache** and writes it to your system of record. This is where you enforce durable invariants: exactly-once accounting, idempotent updates, and audit trails.
 
-![The Synchronization Layer](/blog/images/TheBackgroundSynchronizationLayer.jpg)
+![The Synchronization Layer](/blog/images/syncing.jpg)
 *(Caption: The synchronization layer. Background scheduled (timer) functions ensure the fast caches are eventually consistent with the persistent Source of Truth database.)*
 
 ---
