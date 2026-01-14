@@ -144,7 +144,7 @@ import NamecheapDnsClient from "./namecheap";
 
 It all starts with the SDK connecting to the SporeDrive background service using RPC when we run our NPM `displace` script:
 
-![SDK connecting to Spore-drive via RPC](/static/images/connectingtosporedrivesdkrpc.jpg)
+![SDK connecting to Spore-drive via RPC](/blog/images/connectingtosporedrivesdkrpc.jpg)
 
 The background service uses the `Config` object imported to create and initialize an empty config instance. This config instance can be in memory by default or written to disk at will:
 
@@ -161,7 +161,7 @@ const config: Config = new Config(configPath);
 await config.init();
 ```
 
-![Config Instance in memory](/static/images/configinstanceinmemory.jpg)
+![Config Instance in memory](/blog/images/configinstanceinmemory.jpg)
 
 ### 2. Domain and Security Setup
 
@@ -270,7 +270,7 @@ const drive: Drive = new Drive(config, TauLatest);
 await drive.init();
 ```
 
-![Drive Instance with Plot, Course, and Displace](/static/images/driveinstance.jpg)
+![Drive Instance with Plot, Course, and Displace](/blog/images/driveinstance.jpg)
 
 It initializes the drive and plots a new course using the shape:
 
