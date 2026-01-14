@@ -226,7 +226,7 @@ curl 'http://your-domain.blackhole.localtau:14529/lib/add?a=40&b=2'
 ```
 
 Output:
-```
+```bash
 42
 ```
 
