@@ -13,7 +13,7 @@ image:
   src: /blog/images/taubyte-databases.png
   alt: Key-Value Databases in Taubyte
 summary: Add structured data storage to your Taubyte applications with key-value databases. Like storage, databases are created on-the-fly when first used—enabling dynamic, multi-tenant data isolation without extra configuration.
-date: 2025-01-14T12:00:00Z
+date: 2026-01-14T14:00:00Z
 categories: [Hand-on Learning]
 ---
 
@@ -46,12 +46,12 @@ Just like storage, the matcher can be any string or regular expression. Using a 
 Taubyte databases are **instantiated on-the-fly** the first time you use them. This enables powerful patterns:
 
 **Static matcher**:
-```
+```bash
 /example/kv
 ```
 
 **Dynamic matcher (regex)**:
-```
+```bash
 profile/history/[a-zA-Z0-9]+
 ```
 
@@ -230,73 +230,9 @@ curl http://your-domain.blackhole.localtau:14529/api/kv?key=message
 
 Output:
 
-```
+```bash
 hello world!
 ```
-
-## Advanced: Per-User Databases
-
-Here's how to implement isolated databases per user:
-
-### Database Configuration
-
-Create a database with a regex matcher:
-```
-user/data/.*
-```
-
-### User-Scoped Functions
-
-```go
-package lib
-
-import (
-    "encoding/json"
-    "github.com/taubyte/go-sdk/database"
-    "github.com/taubyte/go-sdk/event"
-)
-
-type UserDataRequest struct {
-    UserID string `json:"user_id"`
-    Key    string `json:"key"`
-    Value  string `json:"value"`
-}
-
-//export userSet
-func userSet(e event.Event) uint32 {
-    h, err := e.HTTP()
-    if err != nil {
-        return 1
-    }
-
-    body := h.Body()
-    defer body.Close()
-    
-    var req UserDataRequest
-    if err := json.NewDecoder(body).Decode(&req); err != nil {
-        h.Write([]byte(`{"error": "invalid request"}`))
-        return 1
-    }
-
-    // Dynamic database path per user
-    dbPath := "user/data/" + req.UserID
-    
-    db, err := database.Open(dbPath)
-    if err != nil {
-        h.Write([]byte(`{"error": "failed to open database"}`))
-        return 1
-    }
-    defer db.Close()
-
-    db.Put(req.Key, []byte(req.Value))
-    h.Write([]byte(`{"status": "stored for user ` + req.UserID + `"}`))
-    return 0
-}
-```
-
-This creates **isolated databases per user**:
-- `user/data/alice` → Alice's database (created on first use)
-- `user/data/bob` → Bob's database (created on first use)
 
 ## Database Operations
 
