@@ -135,6 +135,11 @@ name = "Website"
 url = "https://taubyte.com"
 weight = 40
 
+# Post sorting - show latest posts first (Hugo sorts by date descending by default)
+[sections]
+  [sections.posts]
+    sortBy = "date"
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses = true
 [markup.highlight]
