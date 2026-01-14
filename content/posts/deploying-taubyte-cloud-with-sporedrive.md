@@ -374,21 +374,21 @@ PONG
 
 Here's what you've just deployed:
 
-```
+```bash
 ┌─────────────────────────────────────────────────────────────┐
-│                     Your Taubyte Cloud                       │
+│                     Your Taubyte Cloud                      │
 ├─────────────────────────────────────────────────────────────┤
 │  Node 1 (203.0.113.1)        │  Node 2 (203.0.113.2)        │
-│  ├── auth                    │  ├── auth                     │
-│  ├── tns                     │  ├── tns                      │
-│  ├── seer (DNS)              │  ├── seer (DNS)               │
-│  ├── patrick (CI/CD)         │  ├── patrick (CI/CD)          │
-│  ├── monkey (Build)          │  ├── monkey (Build)           │
-│  ├── hoarder (Replication)   │  ├── hoarder (Replication)    │
-│  └── substrate (Runtime)     │  └── substrate (Runtime)      │
+│  ├── auth                    │  ├── auth                    │
+│  ├── tns                     │  ├── tns                     │
+│  ├── seer (DNS)              │  ├── seer (DNS)              │
+│  ├── patrick (CI/CD)         │  ├── patrick (CI/CD)         │
+│  ├── monkey (Build)          │  ├── monkey (Build)          │
+│  ├── hoarder (Replication)   │  ├── hoarder (Replication)   │
+│  └── substrate (Runtime)     │  └── substrate (Runtime)     │
 ├─────────────────────────────────────────────────────────────┤
-│                   Peer-to-Peer Network                       │
-│              (Secure, encrypted communication)               │
+│                   Peer-to-Peer Network                      │
+│              (Secure, encrypted communication)              │
 └─────────────────────────────────────────────────────────────┘
 ```
 
