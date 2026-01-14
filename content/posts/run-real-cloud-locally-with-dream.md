@@ -74,7 +74,7 @@ dream new multiverse
 
 You'll see output confirming your cloud is running:
 
-```
+```bash
 [INFO] Dreamland ready
 [SUCCESS] Universe blackhole started!
 ```
@@ -162,7 +162,7 @@ curl -H "Host: your-domain.blackhole.localtau" http://127.0.0.1:14529/ping
 ```
 
 Response:
-```
+```bash
 PONG
 ```
 
