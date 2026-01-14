@@ -68,24 +68,21 @@ This separation allows you to:
 ### Repository Structure
 
 **Config Repository:**
-```
+```bash
 your-project-config/
 ├── domains/
 │   └── generated-domain.yaml
 ├── functions/
 │   └── my-function.yaml
-├── databases/
-│   └── my-database.yaml
-└── applications/
-    └── my-app.yaml
+└── databases/
+    └── my-database.yaml
 ```
 
 **Code Repository:**
-```
+```bash
 your-project-code/
 ├── functions/
 │   └── my-function/
-│       ├── lib.go
 │       └── .taubyte/
 │           ├── config.yaml
 │           └── build.sh
