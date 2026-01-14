@@ -13,7 +13,7 @@ image:
   src: /blog/images/sporedrive-deployment.png
   alt: Deploying Your Own Taubyte Cloud with SporeDrive
 summary: Learn how to deploy a complete Taubyte cloud infrastructure to your own servers using SporeDrive, our SDK for infrastructure-as-code deployments. This guide walks you through the entire process from configuration to running your first serverless function.
-date: 2025-01-14T12:00:00Z
+date: 2026-01-14T12:00:00Z
 categories: [Hand-on Learning]
 ---
 
