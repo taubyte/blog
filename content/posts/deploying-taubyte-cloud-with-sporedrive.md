@@ -423,3 +423,6 @@ You've just deployed your own cloud infrastructure capable of competing with maj
 The infrastructure you've created supports serverless functions, static websites, databases, storage, and real-time messaging—all running on your own hardware with complete control over your data.
 
 For more advanced configurations and detailed documentation, visit [tau.how](https://tau.how). Join our [Discord community](https://discord.gg/taubyte) if you have questions or want to share what you're building.
+
+Next: [Run a cloud locally with Dream](/blog/posts/run-real-cloud-locally-with-dream) to start developing, or [create your first project](/blog/posts/creating-your-first-taubyte-project) to begin building.
+

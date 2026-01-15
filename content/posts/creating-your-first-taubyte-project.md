@@ -132,3 +132,4 @@ The fact that local and production processes are identical ensures that what wor
 
 For detailed documentation on all project features, visit [tau.how](https://tau.how).
 
+Next: [Build your first serverless function](/blog/posts/serverless-functions-taubyte) to start deploying code.

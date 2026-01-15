@@ -226,3 +226,4 @@ No more "works on my machine" scenarios. No more deployment surprises. Just pure
 
 For more details on Dream and all its capabilities, visit the [documentation at tau.how](https://tau.how). Join our [Discord community](https://discord.gg/taubyte) if you have questions or want to connect with other developers.
 
+Next: [Create your first project](/blog/posts/creating-your-first-taubyte-project) to start building on your local cloud.
