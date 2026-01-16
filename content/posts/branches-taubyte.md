@@ -76,6 +76,8 @@ To fix this, create the branch in the console:
 3. Type `dev` as the new branch name
 4. Click **Validate**
 
+![Creating a branch](/blog/images/hitchhikers-guide/create-a-branch.png)
+
 The console will refresh and show the branch name changed to `dev`.
 
 ### Building Successfully

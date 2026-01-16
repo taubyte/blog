@@ -32,6 +32,7 @@ Libraries in Taubyte enable you to:
 Before you begin, make sure you have:
 
 1. **A local Taubyte cloud running** with Dream:
+
    - Install Dream: `npm install -g @taubyte/dream`
    - Start your local cloud: `dream new multiverse`
    - Connect to it at [console.taubyte.com](https://console.taubyte.com) by selecting the **blackhole** network
@@ -42,11 +43,15 @@ Before you begin, make sure you have:
 
 From the sidebar, navigate to **Libraries** and click the **+** button.
 
+![Creating a new library](/blog/images/hitchhikers-guide/create-new-library.png)
+
 1. **Name your library** (e.g., `my-shared-lib`)
 2. Choose to either:
    - **Import** an existing library using its repository URL
    - **Generate** a new repository with starter code
 3. Click **Generate** to create a new library
+
+![Library empty template](/blog/images/hitchhikers-guide/library-empty-template.png)
 
 This creates a GitHub repository with template code.
 
@@ -55,6 +60,9 @@ This creates a GitHub repository with template code.
 Click the **green button** in the bottom right to push:
 
 1. **Important**: Copy and save the **Library GitHub ID**—you'll need it for builds
+
+![Library repository ID](/blog/images/hitchhikers-guide/library-repo-id.png)
+
 2. Enter a commit message
 3. Click **Finish**
 4. Skip the build for now (the library isn't in use yet)
@@ -90,18 +98,20 @@ Commit the changes directly on GitHub.
 
 Now let's create a function that uses this library as its code source.
 
+![Libraries page](/blog/images/hitchhikers-guide/libraries-page.png)
+
 Navigate to **Functions** and click **+**:
 
-| Field | Value |
-|-------|-------|
-| Name | Your function name |
-| Timeout | `1s` |
-| Memory | `10MB` |
-| Method | `GET` |
-| Domain | `GeneratedDomain` |
-| Path | `/lib/ping` |
-| **Source** | Select your library (e.g., `my-shared-lib`) |
-| Entry Point | `ping` |
+| Field       | Value                                       |
+| ----------- | ------------------------------------------- |
+| Name        | Your function name                          |
+| Timeout     | `1s`                                        |
+| Memory      | `10MB`                                      |
+| Method      | `GET`                                       |
+| Domain      | `GeneratedDomain`                           |
+| Path        | `/lib/ping`                                 |
+| **Source**  | Select your library (e.g., `my-shared-lib`) |
+| Entry Point | `ping`                                      |
 
 Push the changes, ignore any inline code repo updates, commit and finish. Notice the source is now your library.
 
@@ -122,6 +132,8 @@ dream inject push-all
 ### Testing
 
 Once both builds finish, go back to the console, click the **lightning icon** next to your function. You should see the `PONG` message.
+
+![Library function in use](/blog/images/hitchhikers-guide/libping-function.png)
 
 ## Using a Library as a Dependency
 
@@ -148,15 +160,15 @@ Navigate to **Functions** and click **+**. Click **Template Select**, select **G
 
 Configure the function:
 
-| Field | Value |
-|-------|-------|
-| Name | `add` |
-| Timeout | `1s` |
-| Memory | `10MB` |
-| Method | `GET` |
-| Domain | `GeneratedDomain` |
-| Path | `/lib/add` |
-| Entry Point | `doAdd` |
+| Field       | Value             |
+| ----------- | ----------------- |
+| Name        | `add`             |
+| Timeout     | `1s`              |
+| Memory      | `10MB`            |
+| Method      | `GET`             |
+| Domain      | `GeneratedDomain` |
+| Path        | `/lib/add`        |
+| Entry Point | `doAdd`           |
 
 Click on **Code** to switch to the code tab, then paste the following code:
 
@@ -226,21 +238,21 @@ curl 'http://your-domain.blackhole.localtau:14529/lib/add?a=40&b=2'
 ```
 
 Output:
+
 ```bash
 42
 ```
 
 ## Library vs. Inline Code: When to Use Each
 
-| Use Case | Recommendation |
-|----------|----------------|
-| Quick prototypes | Inline code |
-| Shared utilities | Library |
-| Multiple functions same logic | Library |
-| Strict access control | Library (separate repo) |
-| Complex applications | Library |
-| Simple HTTP handlers | Either works |
-
+| Use Case                      | Recommendation          |
+| ----------------------------- | ----------------------- |
+| Quick prototypes              | Inline code             |
+| Shared utilities              | Library                 |
+| Multiple functions same logic | Library                 |
+| Strict access control         | Library (separate repo) |
+| Complex applications          | Library                 |
+| Simple HTTP handlers          | Either works            |
 
 ## Conclusion
 
@@ -253,4 +265,3 @@ You've now learned how to:
 Libraries are a powerful way to keep your codebase organized as your project grows. They enable sharing logic across your entire platform while maintaining clear ownership and access control.
 
 Next, learn how to [host websites](/blog/posts/hosting-websites-taubyte) on your Taubyte cloud.
-

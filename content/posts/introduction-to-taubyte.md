@@ -12,13 +12,10 @@ tags:
 image:
   src: /blog/images/dreamland-illustration.png
   alt: Introduction to Taubyte
-summary:
-  Introduction to Taubyte
+summary: Introduction to Taubyte
 date: 2024-02-02 23:14:00Z
 categories: [Hand-on Learning]
 ---
-
-
 
 You're reading this article, which means you either just discovered Taubyte or want to learn more about what it is and how it works. Well, let's start with what it is, and then we will dive into how it works using an amazing tool we call `dreamland`.
 
@@ -35,11 +32,13 @@ The best way to learn something is by doing it, and that's exactly what we're go
 What we'll do is install `dreamland`, a project hosted on [github.com/taubyte/dreamland](https://github.com/taubyte/dreamland) that allows you to run a Taubyte-based Cloud Computing Platform locally. It's an excellent tool for local development and testing, but we'll use it in a slightly different way.
 
 Run the following command to install dreamland:
+
 ```sh
 $ npm i @taubyte/dream
 ```
 
 Now, you should have the `dream` command-line tool available. Let's start a cloud:
+
 ```sh
 $ dream new multiverse
 [INFO] Dreamland ready
@@ -53,11 +52,13 @@ Once you see `SUCCESS`, it means your cloud has been fully started.
 ## A first look
 
 First, let's explore what's happening using the command line. Run:
+
 ```sh
 $ dream status universe
 ```
 
 This should output something like:
+
 ```
 ┌───────┬─────────────────────┬────────┬───────┐
 │ Nodes │ elder@blackhole     │ p2p    │ 14051 │
@@ -88,7 +89,6 @@ On the network graph, which you can manipulate, you can see all the same nodes a
 If you hover over any node, it'll display the TCP ports it's using.
 ![](/blog/images/webconsole-dreamland-hover-node.png)
 
-
 ## What's with the mesh network?
 
 Hosts, or as we call them, Nodes, form a Taubyte-based Cloud Computing Platform and communicate with each other using a peer-to-peer network. Running locally through dreamland, all the nodes are interconnected, although this might not always be the case in production, especially if you have many nodes.
@@ -100,6 +100,7 @@ The peer-to-peer nature of Taubyte-based clouds gives them important characteris
 While in production a node can run multiple protocols by defining a shape (a term reminiscent of the internal name `tau` had: `odo`, a reference to the shape-shifting Star Trek character), in dreamland, each node runs only one protocol. This design choice simplifies protocol debugging.
 
 Without further ado, here's what each protocol does:
+
 - `auth` handles token validation and secret management.
 - `tns` ensures project registry consistency across the cloud.
 - `seer` is responsible for DNS resolution and load balancing.
@@ -112,6 +113,7 @@ Without further ado, here's what each protocol does:
 ## The other nodes
 
 The other nodes, referred to as Simples (admittedly, not the best name), include `elder` and `client`. While they are not crucial for the purpose of this article and could be excluded when starting the universe, it's helpful to understand their intended roles:
+
 - `elder` nodes are used for bootstrapping. Since `dreamland` interconnects all nodes, an `elder` is included for testing purposes when using [libdream](https://github.com/taubyte/tau/tree/main/libdream).
 - `client` nodes are lightweight and can be used to test protocols or peer-to-peer services deployed on the cloud.
 
@@ -140,7 +142,6 @@ Enter a project name, a description, toggle private (unless you want the project
 The Web Console will create two repositories: one for configuration, containing mainly YAML files, and another for inline code, containing code in different languages to be compiled to WebAssembly. If everything goes well, you'll be directed to the dashboard.
 ![](/blog/images/webconsole-dreamland-new-project-dashboard.png)
 
-
 ## Creating a Function
 
 Taubyte-based Clouds support serverless functions. Let's create one!
@@ -161,8 +162,9 @@ It's worth noting that the Web Console clones your repositories in-browser, mean
 ![](/blog/images/webconsole-dreamland-new-function-go-to-yaml.png)
 
 You will see YAML code resembling the following:
+
 ```yaml
-id: ''
+id: ""
 description: Returns pong to a ping over HTTP
 tags: []
 source: .
@@ -180,6 +182,7 @@ execution:
 ```
 
 Most of this YAML should be self-explanatory, but let me clarify a few points:
+
 - `source`: can either be `.` for inline code or the name of a library (to be explored in other articles).
 - `execution.call`: specifies the function to be executed and must be exported by the WebAssembly module.
 
@@ -194,7 +197,7 @@ While understanding the entire code or mastering Go isn't necessary, I'll explai
 - The package name can be anything except `main`. The building container, `taubyte/go-wasi` on Docker Hub, wraps your function in a special `main` function.
 - The `github.com/taubyte/go-sdk` package simplifies interactions with the Taubyte VM, making it straightforward to use VM primitives.
 - We use `tinygo` to compile Go into small, efficient WebAssembly modules. To export a function, annotate it with the `//export` comment.
-- Taubyte supports various trigger types, so handlers receive an event. We care about efficiency, so `event.Event` is  really a wrapper of a `uint32`, minimizing unnecessary memory allocation and copying.
+- Taubyte supports various trigger types, so handlers receive an event. We care about efficiency, so `event.Event` is really a wrapper of a `uint32`, minimizing unnecessary memory allocation and copying.
 
 Click `Done` to proceed.
 ![](/blog/images/webconsole-dreamland-new-function-done.png)
@@ -209,6 +212,7 @@ A modal will guide you through the code changes, starting with configuration cha
 ![](/blog/images/webconsole-dreamland-new-function-push-001.png)
 
 Copy the FQDN generated for you as we will need it later:
+
 ```yaml
 fqdn: gftxhd6h0.blackhole.localtau
 ```
@@ -225,23 +229,22 @@ In production, this push would trigger an event captured by `patrick`. However, 
 $ dream inject push-all
 ```
 
-
-
 Return to the Web Console and, on the side menu, click on `Builds`. You should see two CI/CD jobs, one for configuration and one for code.
 ![](/blog/images/webconsole-dreamland-new-function-build.png)
 
 After a few seconds, the build should complete. Click on `Refresh` if it seems delayed. Then, click on the stack icon to view the ping_pong function.
 ![](/blog/images/webconsole-dreamland-new-function-build-open-details.png)
 
-
 ## Executing the Function
 
 Now that our function has been built and its configuration published on `tns`, we can execute it by hitting the endpoint. Since we're running a local cloud, we need to find out which port the `substrate` (or `gateway`, if you're using one) node uses to handle HTTP requests. To do this, run:
+
 ```sh
 $ dream status substrate
 ```
 
 In my case, the HTTP port is 14529.
+
 ```
 ┌─────────────────────┬────────┬───────┐
 │ substrate@blackhole │ copies │     1 │
@@ -255,26 +258,32 @@ In my case, the HTTP port is 14529.
 ```
 
 You can test the function using `curl` as follows, making sure to replace `gftxhd6h0.blackhole.localtau` with your own generated domain:
+
 ```sh
 $ curl -H "Host: gftxhd6h0.blackhole.localtau" http://127.0.0.1:14529/ping
 ```
 
 Output:
+
 ```
 PONG
 ```
 
 Alternatively, you can add the generated domain to your local hosts file (`/etc/hosts` in my case) as follows:
+
 ```sh
 $ sudo vi /etc/hosts
 127.0.0.1 gftxhd6h0.blackhole.localtau
 ```
+
 Save and exit, then run `curl` again but without the `Host` header:
+
 ```sh
 $ curl http://gftxhd6h0.blackhole.localtau:14529/ping
 ```
 
 Output:
+
 ```
 PONG
 ```
@@ -286,7 +295,6 @@ This action opens a new tab where you should see something like this:
 ![](/blog/images/webconsole-dreamland-new-function-exec-done.png)
 
 Congratulations! You've successfully created a cloud and executed a serverless function on it!
-
 
 ## What Just Happened!
 
@@ -344,7 +352,7 @@ sequenceDiagram
     Note over TNS: Assuming successful job execution
 
     Monkey->>TNS: Publish configuration
-    
+
     Monkey->>Monkey: File chunked, structured in DAG
 
     Monkey->>TNS: Update Asset CIDs
@@ -355,7 +363,7 @@ sequenceDiagram
     Note over Monkey,Hoarder: Replicated by at least one node
 ```
 
-It's important to note that because we are using Dreamland, a simulated environment, there's no direct way for GitHub to communicate with your nodes. This limitation is addressed by using the fixture called `push-all`, which emulates the git events that would typically trigger the CI/CD process in a production environment. 
+It's important to note that because we are using Dreamland, a simulated environment, there's no direct way for GitHub to communicate with your nodes. This limitation is addressed by using the fixture called `push-all`, which emulates the git events that would typically trigger the CI/CD process in a production environment.
 
 ### Hitting the Endpoint
 
@@ -364,6 +372,7 @@ The process for handling a request at an endpoint varies depending on the networ
 The diagrams below detail these processes for different configurations:
 
 - Without Gateway and HTTPS:
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -387,6 +396,7 @@ sequenceDiagram
 ```
 
 - With Gateway:
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -404,6 +414,7 @@ sequenceDiagram
 ```
 
 - With HTTPS:
+
 ```mermaid
 sequenceDiagram
     participant Client
@@ -417,6 +428,7 @@ sequenceDiagram
 
     Note over Gateway_Substrate,Client: Secure connection established
 ```
+
 > Note: Taubyte supports the Automatic Certificate Management Environment (ACME) protocol for auto-generating certificates using Let’s Encrypt.
 
 These diagrams demonstrate the seamless and autonomous nature of the Taubyte platform, which requires no manual configuration and ensures a smooth deployment and execution process for serverless functions.
@@ -428,4 +440,3 @@ This guide has introduced you to Taubyte, illustrating its approach to simplifyi
 Taubyte is designed to empower developers, enabling you to focus on innovation rather than infrastructure. Whether you're taking your first steps into cloud computing or looking to optimize your development workflow, Taubyte provides a streamlined, developer-centric platform that simplifies cloud creation and management.
 
 As you continue to explore Taubyte, remember that this introduction is just the starting point. Taubyte's open-source nature invites you to dive deeper, experiment, and contribute to its evolving ecosystem. Welcome to a new era of cloud computing with Taubyte, where creating clouds is as intuitive as developing software.
-

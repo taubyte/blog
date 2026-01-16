@@ -23,15 +23,17 @@ Taubyte makes hosting static websites straightforward. Whether you're building a
 
 From the sidebar, navigate to **Websites** and click the **+** button.
 
+![Creating a new website](/blog/images/hitchhikers-guide/create-new-website.png)
+
 Configure your website:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| Name | Unique identifier | `my-website` |
-| Repository | Generate new or import existing | `Generate` |
-| Private | Repository visibility | Toggle on for private |
-| Domain | Which domain to serve on | `GeneratedDomain` |
-| Path | URL path | `/` |
+| Field      | Description                     | Example               |
+| ---------- | ------------------------------- | --------------------- |
+| Name       | Unique identifier               | `my-website`          |
+| Repository | Generate new or import existing | `Generate`            |
+| Private    | Repository visibility           | Toggle on for private |
+| Domain     | Which domain to serve on        | `GeneratedDomain`     |
+| Path       | URL path                        | `/`                   |
 
 ### Choosing a Template
 
@@ -42,6 +44,8 @@ Taubyte offers several templates to get you started:
 - **Vue**: Vue.js starter template
 - **Static**: Empty static site
 
+![Selecting a website template](/blog/images/hitchhikers-guide/select-website-template.png)
+
 Select your preferred template and click **Generate**.
 
 This instantly creates a fresh GitHub repository with starter code ready for customization.
@@ -49,6 +53,8 @@ This instantly creates a fresh GitHub repository with starter code ready for cus
 ## Pushing Configuration
 
 Click the **push button** in the bottom right to save your configuration.
+
+![Commit and push interface](/blog/images/hitchhikers-guide/commit-and-push-empty.png)
 
 Before finalizing:
 
@@ -71,29 +77,30 @@ Click the **open in browser icon** next to your website in the list. This takes 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Taubyte Site</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: white;
-        }
-        h1 {
-            font-size: 3rem;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: white;
+      }
+      h1 {
+        font-size: 3rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Welcome to My Taubyte Site!</h1>
     <p>This site is hosted on my own cloud infrastructure.</p>
-</body>
+  </body>
 </html>
 ```
 
@@ -110,6 +117,8 @@ dream inject push-specific --rid <github-id> --fn <repo-name>
 
 Navigate to the **Builds** page in the console and wait for completion.
 
+![Website build status](/blog/images/hitchhikers-guide/show-website-build.png)
+
 ## Viewing Your Website
 
 ### Local Setup Required
@@ -121,16 +130,25 @@ sudo nano /etc/hosts
 ```
 
 Add:
+
 ```bash
 127.0.0.1 your-domain.blackhole.localtau
 ```
 
+![Editing /etc/hosts file](/blog/images/hitchhikers-guide/etc-file.png)
+
 ### Open the Website
 
 Back in the console:
+
 1. Navigate to **Websites**
 2. Click the **lightning icon** next to your website
+
+![Lightning button to run website](/blog/images/hitchhikers-guide/lightningbutton-to-run-website.png)
+
 3. A new tab opens with your live site!
+
+![Running website](/blog/images/hitchhikers-guide/running-website.png)
 
 ## Website Structure
 
@@ -155,6 +173,7 @@ my-website/
 This folder is essential for proper deployment:
 
 **config.yaml** - Defines the build environment:
+
 ```yaml
 version: "1.0"
 environment:
@@ -166,6 +185,7 @@ workflow:
 ```
 
 **build.sh** - The build script:
+
 ```bash
 #!/bin/bash
 mkdir -p /out
@@ -182,6 +202,7 @@ For frameworks like React or Vue, the build process is more involved:
 ### React Example
 
 **config.yaml**:
+
 ```yaml
 version: "1.0"
 environment:
@@ -193,6 +214,7 @@ workflow:
 ```
 
 **build.sh**:
+
 ```bash
 #!/bin/bash
 npm install
@@ -204,6 +226,7 @@ cp -r build/* /out/
 ### Vue Example
 
 **build.sh**:
+
 ```bash
 #!/bin/bash
 npm install
@@ -212,15 +235,14 @@ mkdir -p /out
 cp -r dist/* /out/
 ```
 
-
 ## Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
+| Issue               | Solution                                |
+| ------------------- | --------------------------------------- |
 | Website not loading | Check `/etc/hosts` includes your domain |
-| Build failed | Review build logs in the Builds tab |
-| 404 errors | Ensure `index.html` exists at root |
-| Assets not loading | Verify paths are relative, not absolute |
+| Build failed        | Review build logs in the Builds tab     |
+| 404 errors          | Ensure `index.html` exists at root      |
+| Assets not loading  | Verify paths are relative, not absolute |
 
 ## Conclusion
 
@@ -234,4 +256,3 @@ You've just created and deployed your first website on Taubyte:
 With websites and functions sharing the same domain, you can build complete web applications with seamless frontend-backend integration.
 
 Next, learn about [Object Storage](/blog/posts/object-storage-taubyte) for storing and serving files.
-

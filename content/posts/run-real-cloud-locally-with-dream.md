@@ -31,12 +31,12 @@ This design provides a development environment that closely mirrors working with
 
 It's crucial to understand that Dream provides a **simulation**, not an emulation.
 
-| Aspect | Emulation | Dream Simulation |
-|--------|-----------|------------------|
-| Behavior | Approximates production | **Identical** to production |
-| Code | Different codebase | **Same** software components |
-| Protocols | Simplified versions | **Same** protocols |
-| Testing confidence | Medium | **High** |
+| Aspect             | Emulation               | Dream Simulation             |
+| ------------------ | ----------------------- | ---------------------------- |
+| Behavior           | Approximates production | **Identical** to production  |
+| Code               | Different codebase      | **Same** software components |
+| Protocols          | Simplified versions     | **Same** protocols           |
+| Testing confidence | Medium                  | **High**                     |
 
 An emulation merely approximates behavior, which can lead to inconsistencies. In contrast, Dream's simulation runs the exact same software components that exist in a live deployment. The services communicate using the same protocols and follow the same logic.
 
@@ -132,6 +132,7 @@ To add real code and test Taubyte functionalities:
 ![Taubyte Console login interface](/blog/images/taubyteconsole.jpg)
 
 From here you can:
+
 - Create projects
 - Define functions
 - Manage applications
@@ -162,19 +163,20 @@ curl -H "Host: your-domain.blackhole.localtau" http://127.0.0.1:14529/ping
 ```
 
 Response:
+
 ```bash
 PONG
 ```
 
 ## Key Dream Commands
 
-| Command | Description |
-|---------|-------------|
-| `dream new multiverse` | Start a new local cloud |
-| `dream status universe` | Show all running nodes |
-| `dream status substrate` | Get substrate node details (for HTTP port) |
-| `dream inject push-all` | Trigger builds for all repositories |
-| `dream inject push-specific <id>` | Trigger build for specific repository |
+| Command                           | Description                                |
+| --------------------------------- | ------------------------------------------ |
+| `dream new multiverse`            | Start a new local cloud                    |
+| `dream status universe`           | Show all running nodes                     |
+| `dream status substrate`          | Get substrate node details (for HTTP port) |
+| `dream inject push-all`           | Trigger builds for all repositories        |
+| `dream inject push-specific <id>` | Trigger build for specific repository      |
 
 ## The Architecture
 

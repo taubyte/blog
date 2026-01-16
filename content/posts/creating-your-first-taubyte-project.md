@@ -24,11 +24,15 @@ Open your browser and navigate to [console.taubyte.com](https://console.taubyte.
 
 You'll be greeted with a login screen where you need to:
 
+![Console login page](/blog/images/hitchhikers-guide/console-login-page.png)
+
 1. **Enter your email address**
 2. **Choose your network**:
    - Select **Dreamland/blackhole** for local development
    - Enter your custom domain for production deployments
 3. **Click "Login with GitHub"**
+
+![GitHub permission page](/blog/images/hitchhikers-guide/permission-page.png)
 
 The console will request permission to access your GitHub account. This is necessary so it can:
 - Create repositories for your project
@@ -40,6 +44,8 @@ The console will request permission to access your GitHub account. This is neces
 ## Creating a Project
 
 Once logged in, you'll see the projects dashboard. To create a new project:
+
+![Project dashboard](/blog/images/hitchhikers-guide/dashboard.png)
 
 1. Click the **Create Project** button
 2. Fill out the short form:
@@ -59,6 +65,8 @@ When you create a project, Taubyte automatically creates **two GitHub repositori
 |------------|---------|----------|
 | **Config Repo** | Project settings | YAML files for functions, databases, domains, etc. |
 | **Code Repo** | Inline code | Source code in your chosen language (Go, Rust, AssemblyScript) |
+
+![Config and code repos in GitHub](/blog/images/hitchhikers-guide/config-and-code-repos-in-github.png)
 
 This separation allows you to:
 - Manage configuration separately from code

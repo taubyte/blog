@@ -23,6 +23,8 @@ Taubyte's object storage lets you store and retrieve files directly from your se
 
 From the sidebar, navigate to **Storage** and click the **+** button.
 
+![Creating a storage bucket](/blog/images/hitchhikers-guide/create-storage-bucket.png)
+
 Configure your storage:
 
 | Field | Description | Example |
@@ -69,6 +71,8 @@ This means:
 Let's create two functions:
 1. **Upload function**: Store files in a bucket
 2. **Download function**: Retrieve files from a bucket
+
+![Storage functions](/blog/images/hitchhikers-guide/storage-functions.png)
 
 ### Upload Function
 

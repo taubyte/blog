@@ -24,13 +24,15 @@ Taubyte includes built-in **pub/sub messaging** that enables real-time communica
 
 From the sidebar, navigate to **Messaging** and click the **+** button.
 
+![Creating a pub/sub channel](/blog/images/hitchhikers-guide/create-a-pubsub-channel.png)
+
 Configure your channel:
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| Name | Channel identifier | `chat_channel` |
-| Topic Matcher | Topic pattern | `chat/rooms` |
-| WebSocket | Enable WebSocket support | ✅ Toggle on |
+| Field         | Description              | Example        |
+| ------------- | ------------------------ | -------------- |
+| Name          | Channel identifier       | `chat_channel` |
+| Topic Matcher | Topic pattern            | `chat/rooms`   |
+| WebSocket     | Enable WebSocket support | ✅ Toggle on   |
 
 Click **Validate** to save.
 
@@ -54,6 +56,9 @@ Navigate to **Functions** and click **+**:
 
 1. Click **Template Select**
 2. Choose **Go** and **get WebSocket URL**
+
+![Creating get WebSocket URL function](/blog/images/hitchhikers-guide/create-getwebsocketurl-function.png)
+
 3. Set the domain to your generated domain
 4. Set the path to `/api/ws`
 
@@ -65,7 +70,7 @@ package lib
 import (
     "crypto/sha256"
     "encoding/hex"
-    
+
     "github.com/taubyte/go-sdk/event"
     "github.com/taubyte/go-sdk/pubsub"
 )
@@ -80,7 +85,7 @@ func getWebSocketURL(e event.Event) uint32 {
     // Get room name from query parameters
     query := h.Query()
     room := query.Get("room")
-    
+
     if room == "" {
         h.Write([]byte(`{"error": "room parameter required"}`))
         return 1
@@ -111,6 +116,7 @@ func getWebSocketURL(e event.Event) uint32 {
 ```
 
 This function:
+
 1. Reads the `room` query parameter
 2. Hashes it to create a unique channel name
 3. Opens (or creates) the pub/sub channel
@@ -141,6 +147,7 @@ curl "http://your-domain.blackhole.localtau:14529/api/ws?room=tau"
 ```
 
 Response (example):
+
 ```
 /ws/channel/a8f5f167f44f4964e6c998dee827110c...
 ```
@@ -150,30 +157,32 @@ Response (example):
 Open **two terminal windows** to simulate a chat:
 
 **Terminal 1:**
+
 ```bash
 wscat -c "ws://your-domain.blackhole.localtau:14529/ws/channel/a8f5f167f44f4964e6c998dee827110c..."
 ```
 
 **Terminal 2:**
+
 ```bash
 wscat -c "ws://your-domain.blackhole.localtau:14529/ws/channel/a8f5f167f44f4964e6c998dee827110c..."
 ```
 
-Now type in one terminal—it appears instantly in the other! 
+Now type in one terminal—it appears instantly in the other!
+
+![Two terminals with wscat for pub/sub testing](/blog/images/hitchhikers-guide/two-terminals-pubsub-wscat.png)
 
 Your **pub/sub WebSocket is alive**.
 
-
 ## Use Cases
 
-| Use Case | Implementation |
-|----------|----------------|
-| Chat rooms | Per-room channels with WebSocket |
-| Live notifications | Global channel, functions publish |
-| Real-time dashboards | Data channels, subscribe from frontend |
-| Collaborative editing | Document-specific channels |
-| Game state sync | Game room channels |
-
+| Use Case              | Implementation                         |
+| --------------------- | -------------------------------------- |
+| Chat rooms            | Per-room channels with WebSocket       |
+| Live notifications    | Global channel, functions publish      |
+| Real-time dashboards  | Data channels, subscribe from frontend |
+| Collaborative editing | Document-specific channels             |
+| Game state sync       | Game room channels                     |
 
 ## Conclusion
 
@@ -187,4 +196,3 @@ You've learned how to:
 Pub/sub is the foundation for real-time features in your applications—from chat to live notifications to collaborative tools.
 
 Next, learn about [Applications](/blog/posts/taubyte-applications) for organizing resources into logical units.
-

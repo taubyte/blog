@@ -25,6 +25,8 @@ Taubyte comes with a **built-in CI/CD system**. Every time you push changes to t
 
 The build process is defined inside the **`.taubyte` folder**, which lives at the root of your codebase. You'll find this folder in the code of any function, website, or library.
 
+![Builds page with eye and stack icons](/blog/images/hitchhikers-guide/builds-eyeicon-list-stackicon.png)
+
 ### Folder Contents
 
 | File | Purpose |
@@ -204,6 +206,10 @@ dream inject push-all
 # Build specific repository
 dream inject push-specific <repo-id>
 ```
+
+![Triggering builds with dream inject push-all](/blog/images/hitchhikers-guide/dream-inject-push-all.png)
+
+![Triggering builds from console](/blog/images/hitchhikers-guide/dream-inject-push-all-from-console.png)
 
 ## Tips for Faster Builds
 

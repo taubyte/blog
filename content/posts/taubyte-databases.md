@@ -23,6 +23,8 @@ Taubyte provides **key-value databases** that you can access directly from your 
 
 From the sidebar, navigate to **Databases** and click the **+** button.
 
+![Creating a database](/blog/images/hitchhikers-guide/create-database.png)
+
 Configure your database:
 
 | Field | Description | Example |
