@@ -24,6 +24,7 @@ Both **Tau** and **Dream** support running on branches.
 ## Default Behavior
 
 By default:
+
 - **Tau** (production) runs on `main` and `master` branches
 - **Dream** (local) also defaults to these branches
 
@@ -92,19 +93,19 @@ This time it should **succeed**. If you imported a project with existing functio
 
 ## Commands Reference
 
-| Command | Description |
-|---------|-------------|
-| `dream new multiverse` | Start Dream on default branch (main) |
-| `dream new multiverse -b dev` | Start Dream on `dev` branch |
-| `dream inject push-all` | Trigger builds for all repos |
+| Command                       | Description                          |
+| ----------------------------- | ------------------------------------ |
+| `dream new multiverse`        | Start Dream on default branch (main) |
+| `dream new multiverse -b dev` | Start Dream on `dev` branch          |
+| `dream inject push-all`       | Trigger builds for all repos         |
 
 ## Troubleshooting
 
-| Issue | Cause | Solution |
-|-------|-------|----------|
-| "Reference not found" | Branch doesn't exist on remote | Create branch in console |
+| Issue                 | Cause                             | Solution                             |
+| --------------------- | --------------------------------- | ------------------------------------ |
+| "Reference not found" | Branch doesn't exist on remote    | Create branch in console             |
 | Wrong branch building | Dream started on different branch | Restart Dream with correct `-b` flag |
-| Changes not appearing | Built on wrong branch | Verify console shows correct branch |
+| Changes not appearing | Built on wrong branch             | Verify console shows correct branch  |
 
 ## Best Practices
 
@@ -126,4 +127,3 @@ You've learned how to:
 Branching enables safe, isolated development that follows industry best practices. You can experiment freely knowing your main branch stays stable until you're ready to merge.
 
 Next, learn how to [ship to production](/blog/posts/ship-to-production-taubyte) when your project is ready.
-

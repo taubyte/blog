@@ -59,7 +59,7 @@ $ dream status universe
 
 This should output something like:
 
-```
+```bash
 ┌───────┬─────────────────────┬────────┬───────┐
 │ Nodes │ elder@blackhole     │ p2p    │ 14051 │
 │       ├─────────────────────┼────────┼───────┤
@@ -245,7 +245,7 @@ $ dream status substrate
 
 In my case, the HTTP port is 14529.
 
-```
+```bash
 ┌─────────────────────┬────────┬───────┐
 │ substrate@blackhole │ copies │     1 │
 │                     ├────────┼───────┤
@@ -265,7 +265,7 @@ $ curl -H "Host: gftxhd6h0.blackhole.localtau" http://127.0.0.1:14529/ping
 
 Output:
 
-```
+```bash
 PONG
 ```
 
@@ -284,7 +284,7 @@ $ curl http://gftxhd6h0.blackhole.localtau:14529/ping
 
 Output:
 
-```
+```bash
 PONG
 ```
 

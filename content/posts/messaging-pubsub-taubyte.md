@@ -148,7 +148,7 @@ curl "http://your-domain.blackhole.localtau:14529/api/ws?room=tau"
 
 Response (example):
 
-```
+```bash
 /ws/channel/a8f5f167f44f4964e6c998dee827110c...
 ```
 

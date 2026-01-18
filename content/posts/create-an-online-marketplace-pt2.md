@@ -182,7 +182,7 @@ Response:
 
 Use this token in all next requests:
 
-```
+```bash
 -H "Authorization: Bearer YOUR_JWT_TOKEN"
 ```
 
@@ -205,7 +205,7 @@ curl -X PUT https://YOUR_DOMAIN/api/users \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -d '{
     "id":"user id",
-    "name":"New ,
+    "name":"New Name",
     "email":"new@mail.com",
     "phone":"0555000000",
     "address":"New address"
@@ -249,7 +249,7 @@ Now that the backend is ready, we extend the frontend (created in Part 1).
 
 Open Cursor and prompt:
 
-```
+```bash
 Continue implementing the UserService frontend.
 Use the token from login and call all CRUD endpoints.
 Use environment variables for BASE_URL.

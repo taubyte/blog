@@ -136,7 +136,7 @@ $ curl https://get.tau.link/tau | sh
 > It's worth noting that a single host can support multiple nodes, provided their ports do not overlap. However, for the purposes of this guide, we will maintain a one-node-per-host configuration.
 
 Upon successful installation, you should see an output similar to the following:
-```
+```bash
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  3982  100  3982    0     0   3962      0  0:00:01  0:00:01 --:--:--  3966
@@ -156,7 +156,7 @@ The configuration process for a node is straightforward and can be executed with
 ```sh
 $ sudo tau config generate -n enterprise.starships.ws \
       -s compute --protos all --ip 34.133.173.124 \
-      --dv --swarm 
+      --dv --swarm
 ```
 
 Here's a quick rundown of the options used:
@@ -170,7 +170,7 @@ Here's a quick rundown of the options used:
 > Note: It's generally not advisable to enable all protocols on a single node due to potential conflicts and resource constraints. This article simplifies the setup for demonstration purposes. Adjustments to the protocol configuration can easily be made with a single command, which we will explore in future discussions.
 
 Upon successful configuration, you'll receive the node's ID as confirmation:
-```
+```bash
 [INFO] ID: 12D3KooWKv5oNF2a6h9sYzRUPEAaYe6feTbBbcLYZYVFrMDDCHzY
 ```
 
@@ -218,7 +218,6 @@ domains:
 plugins: {}
 ```
 > Should the location be inaccurately determined, you have the option to correct it manually.
-
 The final step involves validating the configuration to ensure its accuracy and completeness:
 ```sh
 $ sudo tau conf validate -s compute
@@ -284,7 +283,7 @@ $ sudo systemctl status tau@compute
 ```
 
 You should see output similar to the following, indicating that the `tau@compute` service is active and running:
-```
+```bash
 ● tau@compute.service - Taubyte Tau Service Running compute
      Loaded: loaded (/lib/systemd/system/tau@.service; enabled; vendor preset: enabled)
      Active: active (running) since Fri 2024-02-09 22:43:52 UTC; 1min 5s ago
@@ -352,6 +351,7 @@ You'll be prompted to enter a password for the encryption:
 ```txt
 Password?
 ```
+
 > Remember this password; it's crucial for the subsequent steps.
 
 The exported configuration will resemble the following (omit the `location` to let it be automatically determined for the other nodes):
@@ -422,12 +422,12 @@ With the template and necessary preparations in place, proceed to configure the 
 - **For the Second Host:**
     ```sh
     $ sudo tau config gen --ip 34.130.131.76 --use compute.tmpl.yaml  --bootstrap /ip4/34.133.173.124/tcp/4242/p2p/12D3KooWKv5oNF2a6h9sYzRUPEAaYe6feTbBbcLYZYVFrMDDCHzY
-    ```
+```
 
 - **For the Third Host:**
     ```sh
     $ sudo tau config gen --ip 35.235.122.141 --use compute.tmpl.yaml  --bootstrap /ip4/34.133.173.124/tcp/4242/p2p/12D3KooWKv5oNF2a6h9sYzRUPEAaYe6feTbBbcLYZYVFrMDDCHzY
-    ```
+```
 
 Important considerations:
 - Utilize the correct IP addresses for each host.
@@ -468,7 +468,7 @@ Running a DNS lookup should now reflect all active hosts:
 ![](/blog/images/slimdig-all-seer-tau-ent-starships-ws.png)
 
 - **For the Generated Domain:** Delegate the specified subdomain to your cloud by adding the appropriate `NS` entry, enhancing domain management and flexibility.
-![](/iamges/add-ns-entry-s-ftll-ink.png)
+![](/blog/images/add-ns-entry-s-ftll-ink.png)
 
 ### Bootstrapping for Recovery and Expansion
 Ensure all nodes are aware of each other to facilitate network resilience and data consistency:
@@ -495,7 +495,7 @@ To extend our cloud's reach, we proceed to configure the additional nodes with p
 - **On the Third Host**:
   ```sh
   $ sudo tau config gen --ip 35.235.122.141 --use compute.tmpl.yaml  --bootstrap /ip4/34.133.173.124/tcp/4242/p2p/12D3KooWKv5oNF2a6h9sYzRUPEAaYe6feTbBbcLYZYVFrMDDCHzY
-  ```
+```
 
 **Important**: Use the correct IP addresses for each host and the first node's multi-address for initial discovery. You'll be prompted to enter the password established during the template creation phase—this step is crucial for maintaining security and consistency across your cloud infrastructure.
 

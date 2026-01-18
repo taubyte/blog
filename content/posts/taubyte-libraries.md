@@ -89,7 +89,6 @@ func ping(e event.Event) uint32 {
 
     h.Write([]byte("PONG"))
     return 0
-}
 ```
 
 Commit the changes directly on GitHub.

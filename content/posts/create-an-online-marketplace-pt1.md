@@ -85,7 +85,7 @@ Steps:
 
 We’ll use [agents.doc](https://github.com/taubyte/agents.doc) as documentation. Prompt your AI to generate code:
 
-```
+```bash
 "Create a fully functioning simple Auth CRUD API using JWT.
 Use different files for organization.
 Use only simple and necessary code.
@@ -199,7 +199,7 @@ Backend library example: [tb_library_auth_service](https://github.com/ghir-hak/t
 
 4. Prompt AI:
 
-```
+```bash
 "Use TailwindCSS to create a minimalist elegant Auth page.
 Use the .env file for the base URL.
 Use window.location.origin for API calls."

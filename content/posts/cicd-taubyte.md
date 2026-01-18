@@ -25,15 +25,13 @@ Taubyte comes with a **built-in CI/CD system**. Every time you push changes to t
 
 The build process is defined inside the **`.taubyte` folder**, which lives at the root of your codebase. You'll find this folder in the code of any function, website, or library.
 
-![Builds page with eye and stack icons](/blog/images/hitchhikers-guide/builds-eyeicon-list-stackicon.png)
-
 ### Folder Contents
 
-| File | Purpose |
-|------|---------|
-| `config.yaml` | Defines the build workflow |
-| `build.sh` | Script executed by the workflow |
-| Additional files | Build-specific assets |
+| File             | Purpose                         |
+| ---------------- | ------------------------------- |
+| `config.yaml`    | Defines the build workflow      |
+| `build.sh`       | Script executed by the workflow |
+| Additional files | Build-specific assets           |
 
 ## The Configuration File
 
@@ -59,12 +57,12 @@ workflow:
 
 ### Configuration Breakdown
 
-| Field | Description | Example |
-|-------|-------------|---------|
-| `version` | Config format version | `"1.0"` |
-| `environment.image` | Docker image for builds | `node:alpine` |
-| `environment.variables` | Environment variables | Key-value pairs |
-| `workflow` | Ordered list of scripts | `["generate.sh", "test.sh", "build.sh"]` |
+| Field                   | Description             | Example                                  |
+| ----------------------- | ----------------------- | ---------------------------------------- |
+| `version`               | Config format version   | `"1.0"`                                  |
+| `environment.image`     | Docker image for builds | `node:alpine`                            |
+| `environment.variables` | Environment variables   | Key-value pairs                          |
+| `workflow`              | Ordered list of scripts | `["generate.sh", "test.sh", "build.sh"]` |
 
 ## Convention Over Configuration
 
@@ -80,16 +78,17 @@ For serverless functions, Taubyte currently supports **WebAssembly only**. We pr
 
 ### Official Build Containers
 
-| Language | Container | Use Case |
-|----------|-----------|----------|
-| Go | `taubyte/go-wasi` | Go functions |
-| Go (libraries) | `taubyte/go-wasi-lib` | Go libraries |
-| Rust | `taubyte/rust-wasi` | Rust functions |
-| AssemblyScript | `taubyte/assemblyscript-wasi` | AS functions |
+| Language       | Container                     | Use Case       |
+| -------------- | ----------------------------- | -------------- |
+| Go             | `taubyte/go-wasi`             | Go functions   |
+| Go (libraries) | `taubyte/go-wasi-lib`         | Go libraries   |
+| Rust           | `taubyte/rust-wasi`           | Rust functions |
+| AssemblyScript | `taubyte/assemblyscript-wasi` | AS functions   |
 
 ### Go Example
 
 **config.yaml**:
+
 ```yaml
 version: "1.0"
 environment:
@@ -99,6 +98,7 @@ workflow:
 ```
 
 **build.sh**:
+
 ```bash
 #!/bin/bash
 go mod tidy
@@ -108,6 +108,7 @@ tinygo build -o /out/main.wasm -target wasi .
 ### Rust Example
 
 **config.yaml**:
+
 ```yaml
 version: "1.0"
 environment:
@@ -117,6 +118,7 @@ workflow:
 ```
 
 **build.sh**:
+
 ```bash
 #!/bin/bash
 cargo build --release --target wasm32-wasi
@@ -129,13 +131,13 @@ cp target/wasm32-wasi/release/*.wasm /out/main.wasm
 
 ### What WASI Provides
 
-| Capability | Description |
-|------------|-------------|
-| File access | Read/write files in sandbox |
-| Networking | HTTP requests, sockets |
-| Randomness | Cryptographic random numbers |
-| Environment | Environment variables |
-| Clocks | Time and timing functions |
+| Capability  | Description                  |
+| ----------- | ---------------------------- |
+| File access | Read/write files in sandbox  |
+| Networking  | HTTP requests, sockets       |
+| Randomness  | Cryptographic random numbers |
+| Environment | Environment variables        |
+| Clocks      | Time and timing functions    |
 
 ### Why WASI Matters for Taubyte
 
@@ -151,6 +153,7 @@ WASI modules can interact with the outside world in a **controlled, portable way
 ### For Functions
 
 Your build must output a file at:
+
 ```bash
 /out/main.wasm
 ```
@@ -160,6 +163,7 @@ This is the WebAssembly binary that gets deployed.
 ### For Websites
 
 All files must be placed in:
+
 ```bash
 /out/
 ```
@@ -169,6 +173,7 @@ The entire folder contents become your static site.
 ### Website Example
 
 **config.yaml**:
+
 ```yaml
 version: "1.0"
 environment:
@@ -180,6 +185,7 @@ workflow:
 ```
 
 **build.sh** (for a React app):
+
 ```bash
 #!/bin/bash
 npm install
@@ -187,7 +193,6 @@ npm run build
 mkdir -p /out
 cp -r build/* /out/
 ```
-
 
 ## Triggering Builds
 
@@ -220,12 +225,12 @@ dream inject push-specific <repo-id>
 
 ## Common Build Issues
 
-| Issue | Cause | Solution |
-|-------|-------|----------|
-| `/out/main.wasm` not found | Build output in wrong location | Check `build.sh` output path |
-| Docker image not found | Typo in image name | Verify container name |
-| Build timeout | Long compilation | Optimize code, split into libraries |
-| Missing dependencies | Not in container | Add `npm install` or `go mod tidy` |
+| Issue                      | Cause                          | Solution                            |
+| -------------------------- | ------------------------------ | ----------------------------------- |
+| `/out/main.wasm` not found | Build output in wrong location | Check `build.sh` output path        |
+| Docker image not found     | Typo in image name             | Verify container name               |
+| Build timeout              | Long compilation               | Optimize code, split into libraries |
+| Missing dependencies       | Not in container               | Add `npm install` or `go mod tidy`  |
 
 ## Conclusion
 
@@ -239,4 +244,3 @@ Taubyte's CI/CD system is designed for simplicity:
 Every push builds and publishes your serverless functions and static websites automatically, keeping deployment simple and seamless.
 
 Next, learn about [working with branches](/blog/posts/branches-taubyte) for feature development and testing.
-

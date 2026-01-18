@@ -101,7 +101,6 @@ func ping(e event.Event) uint32 {
 
     h.Write([]byte("PONG from backend application!"))
     return 0
-}
 ```
 
 Click **Validate** to save.

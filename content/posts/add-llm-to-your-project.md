@@ -25,7 +25,7 @@ In this article, I'll go over how to use the LLM (or GPT) capabilities of [tauby
 A Taubyte Cloud can provide LLM capabilities through what we call a Satellite. In this case it's [taubyte-llama-satellite](https://github.com/samyfodil/taubyte-llama-satellite) which exports llama.cpp capabilities to the Taubyte Virtual Machine, thus giving Serverless Functions (or DFunctions, as per Taubyte's terminology) LLM features.
 
 ## LLAMA SDK
-Satellites export low-level functions that aren't very intuitive to use directly. Fortunately, it's possible to address that with a user-friendly SDK. The [Go](https://go.dev/) SDK for taubyte-llama-satellite](https://github.com/samyfodil/taubyte-llama-satellite) can be found [here](https://github.com/samyfodil/taubyte-llama-satellite/tree/main/sdk).
+Satellites export low-level functions that aren't very intuitive to use directly. Fortunately, it's possible to address that with a user-friendly SDK. The [Go](https://go.dev/) SDK for [taubyte-llama-satellite](https://github.com/samyfodil/taubyte-llama-satellite) can be found [here](https://github.com/samyfodil/taubyte-llama-satellite/tree/main/sdk).
 
 ## Get Ready
 Before proceeding, let's ensure you have a project and a DFunction ready to go. If not, please refer to ["Create a Function"](https://tau.how/guides/build/02-guide/02-create-a-dfunc/).
@@ -146,9 +146,7 @@ package lib
 
 import (
 	"github.com/taubyte/go-sdk/event"
-  "github.com/samyf
-
-odil/taubyte-llama-satellite/sdk"
+  "github.com/samyfodil/taubyte-llama-satellite/sdk"
   "io"
 )
 
