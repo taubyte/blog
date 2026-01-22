@@ -4,3 +4,23 @@
     <a href="https://taubyte.com" target="_blank" rel="noopener">Taubyte</a>
   </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({ 
+        startOnLoad: true,
+        theme: 'dark',
+        themeVariables: {
+          primaryColor: '#4a9eff',
+          primaryTextColor: '#fff',
+          primaryBorderColor: '#4a9eff',
+          lineColor: '#4a9eff',
+          secondaryColor: '#006100',
+          tertiaryColor: '#fff'
+        }
+      });
+    }
+  });
+</script>
