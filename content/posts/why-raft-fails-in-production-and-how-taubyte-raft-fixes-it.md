@@ -16,7 +16,7 @@ date: 2026-01-29 12:00:00Z
 categories: [Insights]
 ---
 
-# Raft isn't the flex. Operations are. That's why Taubyte's Raft feels tougher. 
+## Raft isn't the flex. Operations are. That's why Taubyte's Raft feels tougher. 
 
 Most Raft implementations look great in theory and fall apart in practice. The algorithm itself isn't the problem. It's everything around the algorithm that breaks in production: bootstrapping, discovery, leader routing, rejoin behavior, and what happens when nodes start out of order or the network is unreliable.
 
