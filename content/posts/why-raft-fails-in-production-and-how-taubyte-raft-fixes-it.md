@@ -11,7 +11,7 @@ tags:
   - kubernetes
   - etcd
   - operations
-summary: Most Raft implementations look great in theory and fall apart in practice. The algorithm itself isn't the problem—it's everything around the algorithm that breaks in production: bootstrapping, discovery, leader routing, rejoin behavior, and what happens when nodes start out of order or the network is unreliable. Taubyte's Raft wraps HashiCorp Raft and adapts it with libp2p transport, Taubyte discovery, and datastore-backed persistence. The goal isn't to reinvent consensus—it's to make consensus operable. Nodes can start in any order and converge to a working cluster without static seed lists or fragile bootstrap rituals. This article explores how Taubyte's Raft addresses the operational challenges that make Kubernetes/etcd fragile and compares it to typical Raft libraries.
+summary: "Most Raft implementations look great in theory and fall apart in practice. The algorithm itself isn't the problem—it's everything around the algorithm that breaks in production: bootstrapping, discovery, leader routing, rejoin behavior, and what happens when nodes start out of order or the network is unreliable. Taubyte's Raft wraps HashiCorp Raft and adapts it with libp2p transport, Taubyte discovery, and datastore-backed persistence. The goal isn't to reinvent consensus—it's to make consensus operable. Nodes can start in any order and converge to a working cluster without static seed lists or fragile bootstrap rituals. This article explores how Taubyte's Raft addresses the operational challenges that make Kubernetes/etcd fragile and compares it to typical Raft libraries."
 date: 2026-01-29 12:00:00Z
 categories: [Insights]
 ---
