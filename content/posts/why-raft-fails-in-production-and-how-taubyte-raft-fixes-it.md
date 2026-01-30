@@ -2,7 +2,7 @@
 title: Why Raft Fails in Production and How Taubyte Raft Fixes It
 author: Taubyte
 featured: true
-draft: true
+draft: false
 tags:
   - taubyte
   - raft
