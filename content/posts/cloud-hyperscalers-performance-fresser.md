@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-18T16:00:00Z
-title: 'Performance-Fresser Series: Today: Cloud Hyperscalers'
+title: 'Cloud Hyperscalers: The $10M Lesson from 37signals'
 featured: true
 draft: false
 tags:

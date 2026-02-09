@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-16T16:00:00Z
-title: 'Performance-Fresser Series: Today: NGINX'
+title: 'NGINX: When Reverse Proxies Cost More Than They''re Worth'
 featured: true
 draft: false
 tags:

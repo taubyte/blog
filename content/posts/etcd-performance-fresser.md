@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-19T16:00:00Z
-title: 'Performance-Fresser Series: Today: etcd'
+title: 'etcd: The Consensus Tax You''re Probably Paying For Nothing'
 featured: true
 draft: false
 tags:

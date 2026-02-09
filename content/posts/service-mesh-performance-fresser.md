@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-20T16:00:00Z
-title: 'Performance-Fresser Series: Today: Service Mesh'
+title: 'Service Mesh: The Sidecar Tax That Eats Your Memory'
 featured: true
 draft: false
 tags:

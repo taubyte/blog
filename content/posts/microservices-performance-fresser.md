@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-17T16:00:00Z
-title: 'Performance-Fresser Series: Today: Microservices'
+title: 'Microservices: What Amazon Prime Video Learned the Hard Way'
 featured: true
 draft: false
 tags:

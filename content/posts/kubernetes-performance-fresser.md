@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-15T16:00:00Z
-title: 'Performance-Fresser Series: Today: Kubernetes'
+title: 'Kubernetes: The Orchestration Tax Most Teams Don''t Need'
 featured: true
 draft: false
 tags:

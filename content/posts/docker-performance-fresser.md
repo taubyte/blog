@@ -1,7 +1,7 @@
 ---
 author: Zaoui Amine
 date: 2026-02-21T16:00:00Z
-title: 'Performance-Fresser Series: Today: Docker'
+title: 'Docker: When Containers Add Overhead Instead of Value'
 featured: true
 draft: false
 tags:
