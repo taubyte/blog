@@ -9,7 +9,7 @@ tags:
   - cloud
   - developer-experience
   - architecture
-summary: A plain-English explanation of Taubyte's core philosophy: infrastructure ownership, Git-native operations, local-first validation, and automated workflows.
+summary: "A plain-English explanation of Taubyte's core philosophy: infrastructure ownership, Git-native operations, local-first validation, and automated workflows."
 date: 2026-01-09T09:24:00Z
 categories: [Hand-on Learning]
 ---

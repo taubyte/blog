@@ -1,5 +1,5 @@
 ---
-title: Vanilla Raft vs Taubyte Raft: What Changes and Why It Matters
+title: "Vanilla Raft vs Taubyte Raft: What Changes and Why It Matters"
 author: Samy Fodil
 featured: true
 draft: false
