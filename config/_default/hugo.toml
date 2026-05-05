@@ -5,6 +5,9 @@ theme = 'PaperMod'
 googleAnalytics = 'G-VVFE939YJ3'
 buildFuture = true
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [params]
 # Theme-specific parameters
 title = "Taubyte Blog"
@@ -81,6 +84,50 @@ url = "https://discord.gg/4agEDXuf"
 name = "linkedin"
 url = "https://www.linkedin.com/company/taubyte-page"
 
+[params.schema]
+publisherType = "Organization"
+sameAs = [
+  "https://www.linkedin.com/company/taubyte-page",
+  "https://www.crunchbase.com/organization/taubyte",
+  "https://github.com/taubyte",
+  "https://twitter.com/dtaubyte",
+  "https://instagram.com/dtaubyte",
+  "https://discord.gg/4agEDXuf",
+  "https://tau.how"
+]
+
+[params.schema.organization]
+name = "Taubyte"
+legalName = "TAUBYTE INC"
+url = "https://taubyte.com"
+foundingDate = "2019"
+description = "Taubyte builds a full-stack workspace that lets teams and coding agents build, test, and ship applications on their own infrastructure."
+
+[params.schema.contactPoint]
+contactType = "sales and support"
+url = "https://taubyte.com/contact"
+availableLanguage = ["en"]
+
+[[params.schema.faq]]
+question = "What is Taubyte?"
+answer = "Taubyte is a full-stack workspace for building, testing, and shipping applications on infrastructure you control."
+
+[[params.schema.faq]]
+question = "Who is the Taubyte Blog for?"
+answer = "The blog is written for developers, platform teams, operators, and technical leaders evaluating distributed cloud, local development, WebAssembly, and AI-era software delivery."
+
+[[params.schema.faq]]
+question = "How does Taubyte use Git?"
+answer = "Git is the control path for projects, resources, code, configuration, builds, and deployments, so changes remain reviewable and traceable."
+
+[[params.schema.faq]]
+question = "Can Taubyte run locally before production?"
+answer = "Yes. Taubyte uses Dream to run a local cloud environment that mirrors production behavior for development and testing."
+
+[[params.schema.faq]]
+question = "Where can readers learn more?"
+answer = "Readers can use the Taubyte documentation at tau.how, the GitHub organization, the community Discord, or the contact page on taubyte.com."
+
 [params.analytics.google]
 SiteVerificationTag = "XYZabc"
 
@@ -150,4 +197,3 @@ noClasses = false
 # guessSyntax = true
 # lineNos = true
 # style = "github"
-

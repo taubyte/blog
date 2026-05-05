@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Taubyte Blog AI Discovery",
+  "serviceType": "AI-readable blog discovery endpoint",
+  "url": "https://taubyte.com/blog/ai/service.json",
+  "provider": {
+    "@type": "Organization",
+    "name": "Taubyte",
+    "url": "https://taubyte.com"
+  },
+  "areaServed": "Worldwide",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://taubyte.com/contact"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Taubyte content and developer resources",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "CreativeWork",
+          "name": "Blog posts",
+          "url": "https://taubyte.com/blog/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "TechArticle",
+          "name": "Documentation",
+          "url": "https://tau.how"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareSourceCode",
+          "name": "Open source repositories",
+          "url": "https://github.com/taubyte"
+        }
+      }
+    ]
+  }
+}

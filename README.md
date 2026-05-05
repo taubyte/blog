@@ -25,7 +25,7 @@
    hugo --environment production
    ```
    
-   This uses the production base URL: `https://taubyte.github.io/blog/`
+   This uses the production base URL: `https://taubyte.com/blog/`
 
 **Configuration Structure:**
 - Base config: `config/_default/hugo.toml`
